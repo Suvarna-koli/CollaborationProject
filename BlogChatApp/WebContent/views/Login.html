@@ -1,0 +1,21 @@
+<span style="color:red">{{error.message}}</span> 
+  
+  <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+
+<div class="container">
+  <div class="wrapper">
+    <form class="form-signin">       
+      <h2 class="form-signin-heading">Please login</h2>
+      <input type="text" class="form-control" ng-model="user.username" placeholder="User Name" required/>
+      <input type="password" class="form-control" ng-model="user.password" placeholder="Password" required/>      
+      <label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="validateUser()">Login</button>   
+    </form>
+  </div>
+  </div>
+ 

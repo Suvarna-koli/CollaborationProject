@@ -1,0 +1,323 @@
+<!-- <!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../lib/w3.css">
+<link rel="stylesheet" href="../lib/theme-black.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<body>
+
+Side Navigation on click
+<nav class="" style="display:none;z-index:2">
+  <a href="javascript:void(0)" onclick="w3_close()" class="closenav xxxlarge text-teal">Close
+    <i class="fa fa-remove"></i>
+  </a>
+  <a href="javascript:void(0)">Link 1</a>		
+  <a href="javascript:void(0)">Link 2</a>		
+  <a href="javascript:void(0)">Link 3</a>		
+  <a href="javascript:void(0)">Link 4</a>		
+  <a href="javascript:void(0)">Link 5</a>		
+</nav>
+
+Navbar
+<div class="top">
+ <ul class="navbar theme-d2 left-align large">
+  <li class="hide-medium hide-large opennav right">
+    <a class="hover-white large theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  </li>
+  <li><a href="tryit.asp-filename=tryw3css_templates_website&stacked=h.html#" class="teal"><i class="fa fa-home argin-right"></i>Logo</a></li>
+  <li class="hide-small"><a href="tryit.asp-filename=tryw3css_templates_website&stacked=h.html#" class="hover-white">Link 1</a></li>
+  <li class="hide-small"><a href="tryit.asp-filename=tryw3css_templates_website&stacked=h.html#" class="hover-white">Link 2</a></li>
+  <li class="hide-small dropdown-hover">
+    <a href="tryit.asp-filename=tryw3css_templates_website&stacked=h.html#" class="hover-white" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></a>     
+    <div class="dropdown-content white card-4">
+      <a href="tryit.asp-filename=tryw3css_templates_website&stacked=h.html#">Link</a>
+      <a href="tryit.asp-filename=tryw3css_templates_website&stacked=h.html#">Link</a>
+      <a href="tryit.asp-filename=tryw3css_templates_website&stacked=h.html#">Link</a>
+    </div>
+  </li>
+  <li class="hide-small right"><a href="tryit.asp-filename=tryw3css_templates_website&stacked=h.html#" class="hover-teal" title="Search"><i class="fa fa-search"></i></a></li>
+ </ul>
+</div>
+
+Navbar on small screens
+<div id="navDemo" class="hide hide-large hide-medium top" style="margin-top:43px;">
+  <ul class="navbar left-align large theme">
+    <li><a href="tryit.asp-filename=tryw3css_templates_website&stacked=h.html#">Link 1</a></li>
+    <li><a href="tryit.asp-filename=tryw3css_templates_website&stacked=h.html#">Link 2</a></li>
+    <li><a href="tryit.asp-filename=tryw3css_templates_website&stacked=h.html#">Link 3</a></li>
+  </ul>
+</div>
+
+<div class="display-container animate-opacity">
+  <img class="testimg" src="img_sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+  <div class="container display-bottomleft margin-bottom">  
+    <button onclick="document.getElementById('id01').style.display='block'" class="btn xlarge theme hover-teal" title="Go To W3.CSS">LEARN W3.CSS</button>
+  </div>
+</div>
+
+Modal
+<div id="id01" class="modal animate-opacity">
+    <div class="modal-content card-8 animate-top">
+      <header class="container teal"> 
+        <span onclick="document.getElementById('id01').style.display='none'" class="closebtn"><i class="fa fa-remove"></i></span>
+        <h4>Oh snap! We just showed you a modal..</h4>
+        <h5>Because we can <i class="fa fa-smile-o"></i></h5>
+      </header>
+      <div class="container">
+        <p>Cool huh? Ok, enough teasing around..</p>
+        <p>Go to our <a class="btn" href="default.asp.html">W3.CSS Tutorial</a> to learn more!</p>
+      </div>
+      <footer class="container teal">
+        <p>Modal footer</p>
+      </footer>
+    </div>
+</div>
+
+Container
+<div class="container padding-hor-64 center">
+<h2>OUR TEAM</h2>	
+<p>Meet the team - our office rats:</p>
+				
+<div class="row"><br>
+
+<div class="quarter">
+  <img src="img_avatar.jpg" alt="Boss" style="width:45%" class="circle hover-opacity">
+  <h3>Johnny Walker</h3>
+  <p>Web Designer</p>
+</div>
+
+<div class="quarter">
+  <img src="img_avatar.jpg" alt="Boss" style="width:45%" class="circle hover-opacity">
+  <h3>Rebecca Flex</h3>
+  <p>Support</p>
+</div>
+
+<div class="quarter">
+  <img src="img_avatar.jpg" alt="Boss" style="width:45%" class="circle hover-opacity">
+  <h3>Jan Ringo</h3>
+  <p>Boss man</p>
+</div>
+
+<div class="quarter">
+  <img src="img_avatar.jpg" alt="Boss" style="width:45%" class="circle hover-opacity">
+  <h3>Kai Ringo</h3>
+  <p>Fixer</p>
+</div>
+
+</div>
+</div>
+
+Row
+<div class="row-padding padding-hor-64 theme-l1">
+
+<div class="quarter">
+<h2>Our Portfolio</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+<div class="quarter">
+<div class="card-2 white">
+  <img src="img_fjords.jpg" alt="Vernazza" style="width:100%">
+  <div class="container">
+  <h3>Customer 1</h3>
+  <h4>Trade</h4>
+  <p>Blablabla</p>
+  <p>Blablabla</p>
+  <p>Blablabla</p>
+  <p>Blablabla</p>
+  </div>
+  </div>
+</div>
+
+<div class="quarter">
+<div class="card-2 white">
+  <img src="img_lights.jpg" alt="Cinque Terre" style="width:100%">
+  <div class="container">
+  <h3>Customer 2</h3>
+  <h4>Trade</h4>
+  <p>Blablabla</p>
+  <p>Blablabla</p>
+  <p>Blablabla</p>
+  <p>Blablabla</p>
+  </div>
+  </div>
+</div>
+
+<div class="quarter">
+<div class="card-2 white">
+  <img src="img_mountains.jpg" alt="Monterosso" style="width:100%">
+  <div class="container">
+  <h3>Customer 3</h3>
+  <h4>Trade</h4>
+  <p>Blablabla</p>
+  <p>Blablabla</p>
+  <p>Blablabla</p>
+  <p>Blablabla</p>
+  </div>
+  </div>
+</div>
+
+</div>
+
+Container
+<div class="container" style="position:relative">
+  <a onclick="w3_open()" class="btn-floating-large teal" style="position:absolute;top:-28px;right:24px;z-index:0;">
+  <i class="fa fa-plus"></i></a>
+</div>
+
+<div class="row-padding center padding-hor-64">
+    <h2>PRICING</h2>
+    <p>Choose a pricing plan that fits your needs.</p><br>
+    <div class="third margin-bottom">
+      <ul class="ul border hover-shadow">
+        <li class="theme">
+          <p class="xlarge">Basic</p>
+        </li>
+        <li class="padding-hor-16"><b>10GB</b> Storage</li>
+        <li class="padding-hor-16"><b>10</b> Emails</li>
+        <li class="padding-hor-16"><b>10</b> Domains</li>
+        <li class="padding-hor-16"><b>Endless</b> Support</li>
+        <li class="padding-hor-16">
+          <h2 class="wide"><i class="fa fa-usd"></i> 10</h2>
+          <span class="opacity">per month</span>
+        </li>
+        <li class="theme-l5 padding-hor-24">
+          <button class="btn teal padding-large"><i class="fa fa-check"></i> Sign Up</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="third margin-bottom">
+      <ul class="ul border hover-shadow">
+        <li class="theme-l2">
+          <p class="xlarge">Pro</p>
+        </li>
+        <li class="padding-hor-16"><b>25GB</b> Storage</li>
+        <li class="padding-hor-16"><b>25</b> Emails</li>
+        <li class="padding-hor-16"><b>25</b> Domains</li>
+        <li class="padding-hor-16"><b>Endless</b> Support</li>
+        <li class="padding-hor-16">
+          <h2 class="wide"><i class="fa fa-usd"></i> 25</h2>
+          <span class="opacity">per month</span>
+        </li>
+        <li class="theme-l5 padding-hor-24">
+          <button class="btn teal padding-large"><i class="fa fa-check"></i> Sign Up</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="third margin-bottom">
+      <ul class="ul border hover-shadow">
+        <li class="theme">
+          <p class="xlarge">Premium</p>
+        </li>
+        <li class="padding-hor-16"><b>50GB</b> Storage</li>
+        <li class="padding-hor-16"><b>50</b> Emails</li>
+        <li class="padding-hor-16"><b>50</b> Domains</li>
+        <li class="padding-hor-16"><b>Endless</b> Support</li>
+        <li class="padding-hor-16">
+          <h2 class="wide"><i class="fa fa-usd"></i> 50</h2>
+          <span class="opacity">per month</span>
+        </li>
+        <li class="theme-l5 padding-hor-24">
+          <button class="btn teal padding-large"><i class="fa fa-check"></i> Sign Up</button>
+        </li>
+      </ul>
+    </div>
+</div>
+
+Container
+<div class="container padding-hor-64 theme-l5">
+  <div class="row">
+    <div class="col m5">
+    <div class="padding-hor-16"><span class="xlarge border-teal bottombar">Contact Us</span></div>
+      <h3>Address</h3>
+      <p>Swing by for a cup of coffee, or whatever.</p>
+      <p><i class="fa fa-map-marker text-teal xlarge"></i>  Chicago, US</p>
+      <p><i class="fa fa-phone text-teal xlarge"></i>  +00 1515151515</p>
+      <p><i class="fa fa-envelope-o text-teal xlarge"></i>  test@test.com</p>
+    </div>
+    <div class="col m7">
+      <form class="container card-4 padding-hor-16 white">
+      <div class="group">      
+        <label class="label">Name</label>
+        <input class="input" type="text">
+      </div>
+      <div class="group">      
+        <label class="label">Email</label>
+        <input class="input" type="text">
+      </div>
+      <div class="group">      
+        <label class="label">Subject</label>
+        <input class="input" type="text">
+      </div>  
+      <input class="check" type="checkbox" checked>
+      <label class="validate">I Like it!</label>
+      <button type="button" class="btn right theme">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+Google Maps
+<div id="googleMap" style="width:100%;height:420px;"></div>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter = new google.maps.LatLng(41.878114, -87.629798);
+
+function initialize() {
+var mapProp = {
+  center:myCenter,
+  zoom:5,
+  scrollwheel:false,
+  draggable:false,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+  position:myCenter,
+});
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+
+Script For Side Navigation
+<script>
+function w3_open() {
+    document.getElementsByClassName("sidenav")[0].style.width = "300px";
+    document.getElementsByClassName("sidenav")[0].style.textAlign = "center";
+    document.getElementsByClassName("sidenav")[0].style.fontSize = "40px";
+    document.getElementsByClassName("sidenav")[0].style.paddingTop = "10%";
+    document.getElementsByClassName("sidenav")[0].style.display = "block";
+}
+function w3_close() {
+    document.getElementsByClassName("sidenav")[0].style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("show") == -1) {
+        x.className += " show";
+    } else { 
+        x.className = x.className.replace(" show", "");
+    }
+}
+</script>
+
+</body>
+</html>
+ -->
