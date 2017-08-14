@@ -1,5 +1,7 @@
 package com.niit.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -70,6 +72,16 @@ public class UserController {
 		return new ResponseEntity<User>(validUser,HttpStatus.OK);
 	}
 	
+	@RequestMapping(value="/User/logout",method=RequestMethod.POST)
+	public ResponseEntity<?> logout(HttpSession session){
+		String username=(String)session.getAttribute("username");
+		User user=userDAO.getUserByUsername(username);
+		user.setOnline(false);
+		userDAO.updateUser(user);
+		session.removeAttribute(username);
+		session.invalidate();
+		return new ResponseEntity<Void>(HttpStatus.OK);
+	}
 
 
 }

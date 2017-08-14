@@ -47,8 +47,14 @@ return user;
 
 
 	public void updateUser(User user) {
-		
+		Session session=sessionFactory.getCurrentSession();
+		session.update(user);
 		
 	}
 
+	public User getUserByUsername(String username){
+		Session session=sessionFactory.getCurrentSession();
+		User user=(User)session.get(User.class,username);
+		return user;
+	}
 }

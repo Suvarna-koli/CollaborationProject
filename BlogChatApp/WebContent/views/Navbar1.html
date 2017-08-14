@@ -13,10 +13,13 @@
 
 <script type="text/javascript" src="js/service.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
+
+<!-- <script src="assets/js/angular-cookie/angular-cookies.js"></script> -->
 
 </head>
 
-<body background="img/mybg.jpg" ng-app="app">
+<body background="img/18.jpg" ng-app="app">
 
 
 <header>		<!-- Starting the Navbar Code -->
@@ -28,7 +31,7 @@
 				<a class="navbar-brand" href=""><i class="fa fa-home"></i></a>
 			</div> -->
 			<ul class="nav navbar-nav navbar-left" bgcolor="red">
-				<li><a href="#/UserHome" bgcolor="red">Home</a></li>
+				<li><a href="#/Userhome" bgcolor="red">Home123</a></li>
 				<li><a href="ContactUs">ContactUs</a></li>
  <li class="dropdown"><a href="#" class="hover-red"
 					data-toggle="dropdown">Blogs
@@ -43,11 +46,12 @@
 </li>
 </ul>
 			<ul class="nav navbar-nav navbar-right">
-
-				<li><a href="#/registerUser"><span
+<li><a href="" ng-show="currentUser.firstname"> Welcome{{currentUser.firstname}}{{currentUser.lastname}}</a></li>
+				<li><a href="#/registerUser" ng-hide="currentUser.firstname"><span
 						class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-				<li><a href="#/validateUser"><span
+				<li><a href="#/validateUser" ng-hide="currentUser.firstname"><span
 						class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						<li><a href="" ng-click="logout()" ng-show="currentUser.firstname"> LogOut</a></li>
 				<li><a href="Home"><span
 						class="glyphicons glyphicons-arrow-left"></span></a></li>
 

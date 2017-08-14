@@ -11,14 +11,15 @@ app.controller('UserController',function(UserService,$scope,$rootScope,$location
 		$scope.message='Registered Successfully, plz login'
 			console.log(response.status)
 			
-			$location.path('/Login')
+			$location.path('/validateUser')
 	},function(response)
 	{
 		console.log(response.status)
 		console.log(response.data)
 		
+	})
 	}
-	)}
+	
 	$scope.validateUser=function(){
 		alert("validate controller")
 		UserService.validateUser($scope.user).then(function(response){
@@ -30,10 +31,26 @@ app.controller('UserController',function(UserService,$scope,$rootScope,$location
 	{
 		$scope.error=response.data
 		console.log(response.status)
-		$location.path('/Login')
+		$location.path('/validateUser')
 		
 	}
 	)}	
+	$rootScope.logout=function(){
+		alert("logout controller")
+		UserService.logout().then(function(response){
+		$scope.logoutSuccess="LoggedOut Successfully.."
+			$location.path=('/validateUser');
+		
+		},function(response){
+			$scope.error=response.data
+			$location.pat('/validateUser')
+		})
+	}
+	$scope.updateUser=function(){
+		UserService.updateUser($scope.user).then(function(response){
+			
+		})
+	}
 })
 
 
