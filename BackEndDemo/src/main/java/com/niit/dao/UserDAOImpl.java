@@ -14,10 +14,12 @@ import com.niit.model.User;
 public class UserDAOImpl implements UserDAO {
 
 	@Autowired
-	SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
 
 	public void registerUser(User user) {
+		System.out.println("in daoimpl");
 		Session session=sessionFactory.getCurrentSession();
+		System.out.println(user.getFirstname());
 		session.save(user);
 	}
 
@@ -25,13 +27,14 @@ public class UserDAOImpl implements UserDAO {
 	public User validateUsername(String username) {
 		Session session=sessionFactory.getCurrentSession();
 		User user=(User)session.get(User.class, username);
+		System.out.println(user.getUsername());
 		return user;
 	}
 
 	public User validateEmail(String email) {
 Session session=sessionFactory.getCurrentSession();
 Query query=session.createQuery("from User where email=?");
-User user=(User)session.get("User", email);
+User user=(User) query.list();
 return user;
 	}
 
@@ -54,7 +57,9 @@ return user;
 
 	public User getUserByUsername(String username){
 		Session session=sessionFactory.getCurrentSession();
+		System.out.println("entered in daoimpl");
 		User user=(User)session.get(User.class,username);
+		System.out.println(user.getFirstname());
 		return user;
 	}
 }

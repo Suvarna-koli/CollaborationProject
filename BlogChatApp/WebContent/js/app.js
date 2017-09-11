@@ -20,20 +20,81 @@ app.config(function($routeProvider){
 		controller:'UserController',
 		templateUrl:'views/Login.html'
 	})
+	.when('/editProfile',{
+		controller:'UserController',
+		templateUrl:'views/UpdateProfile.html'
+		
+	})
+	.when('/saveJob',{
+		controller:'JobController',
+		templateUrl:'views/JobForm.html'
+		
+	})
+	.when('/getAllJobs',{
+		controller:'JobController',
+		templateUrl:'views/JobPost.html'
+		
+	})
+	
+	.when('/saveblogs',{
+		controller:'BlogController',
+	templateUrl:'views/BlogPost.html'	
+	})
+	.when('/getallblogs',{
+		controller:'BlogController',
+	templateUrl:'views/ListOfBlogs.html'	
+	})
+	.when('/getblogbyid/:blogid',{
+		controller:'BlogDetailController',
+	templateUrl:'views/BlogPostDetail.html'	
+	})
+	
+	.when('/approveblogpost/:blogid',{
+		controller:'BlogDetailController',
+	templateUrl:'views/BlogPostApprovalForm.html'	
+	})
+	
+	.when('/profilepic',{
+		templateUrl:'views/ProfileImage.html'
+	})
 
-app.run(function($rootScope,$cookieStore,UserService,$location){
+	.when('/listOfSuggestedUser',{
+		controller:'FriendController',
+	templateUrl:'views/SuggestedUser.html'	
+	})
+	.when('/listOfPendingReq',{
+		controller:'FriendController',
+	templateUrl:'views/PendingRequest.html'	
+	})
+	.when('/getUserDetails/fromId',{
+		controller:'FriendDetailController',
+	templateUrl:'views/FrUserDetails.html'	
+	})
+	
+	.otherwise({
+		templateUrl : 'views/UserHome.html'
+
+	})
+})
+
+app.run(function($rootScope,$cookieStore,UserService,JobService,$location){
 	if($rootScope.currentUser==undefined)
 		$rootScope.currentUser=$cookieStore.get("currentUser")
-	$rootScope.logout=function(){
-		UserService.logout().then(function(response){
-			$rootScope.logoutSuccess="logout ..Sccuessfully"
-	delete $rootScope.currentUser
-$cookiesStore.remove("currentUser")
-$location.path("validateUser");
-		},function(response){
-			$scope.error=response.data
-			$location.path("validateUser")
+		
+		/*$rootScope.logout = function() {
+		
+		UserService.logout().then(function(response) {
+			$rootScope.message = "logged out successfully.."
+			delete $rootScope.currentUser;
+			$cookieStore.remove("currentUser")
+			$location.path('/validateUser')
+
+		}, function(response) {
+			console.log(response.status)
+			$rootScope.message=response.data.message
+			$location.path('/validateUser')
 		})
-	}
-})
+*/
+	
+
 })

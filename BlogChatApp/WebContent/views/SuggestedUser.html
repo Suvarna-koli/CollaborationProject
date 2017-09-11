@@ -1,0 +1,23 @@
+<table class="table table-responsive">
+<thead>
+<tr>
+<td>First Name</td>
+<td>   Last Name</td>
+<td>   Online</td>
+<td>   Role</td>
+<td>   Request</td>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="user in suggestedUsers">
+<td>{{user.firstname}}</td>
+ <td>{{user.lastname}}</td> 
+<td ng-if="user.online">Yes</td>
+<td ng-if="!user.online">No</td>
+<td>{{user.role}}</td>
+<td><a class="btn btn-default" >Send Request</a></td>
+<td><a><input type="submit" value="Send Request" class="btn btn-primary" ng-click="addFriendRequest(user.username)"></a></td>
+
+</tr>
+</tbody>
+</table>

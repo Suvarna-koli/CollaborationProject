@@ -1,0 +1,111 @@
+ <span style="color:red">{{error.message}}</span>
+
+<!-- <style>
+.form-showjob
+{
+    max-width:500px;
+     margin: 0 auto; 
+    
+     
+}
+.form-showjob .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.account
+{
+    padding: 10px 0px 20px 0px;
+    background-color: #f7f7f7;
+  	width:600px;
+  	font-size:20px;
+  	align:center;
+  	border: 2px solid white;
+    border-radius: 8px;
+    background-image:url("img/pc1.jpg")";
+}
+.table-responsive .table-hover{
+background-color:#FFFFFF;
+}
+.btn-block{
+background-color:#20B2AA;
+}
+</style> -->
+  
+<div class="container">
+
+<div class="row">
+<div class="col-sm-6 col-md-4 col-md-offset-4">
+     <div class="wrapper"> 
+  <div class="account">
+<!-- <form class="form-showjob"> -->
+
+
+Search:<input ng-model="jobSearch">
+<!-- Search By Title:<input ng-model="searchText.jobTitle">
+ -->
+ <table class="table table-responsive">
+<thead>
+<tr>
+<th>Title</th>
+<th>Posted On</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="j in jobs | filter:jobSearch">
+<td><a href="" ng-click="getJobById(j.id)"><font color="black">{{j.jobTitle}}</font></a></td>
+
+<td><font color="black">{{j.postedOn | date: 'yyyy-MM-dd'}}</font></td>
+</tr>
+
+</tbody>
+</table>
+
+<div ng-show="showjobDetails">
+    
+<b>Job Title:</b><font color="black">{{j.jobTitle}}</font><br>
+<b>Job Description:</b>{{j.jobDesc}}<br>
+<b>Skills Required:</b>{{j.skillsRequired}}<br>
+<b>Years Of Experience:</b>{{j.yrsOfExp}}<br>
+<b>Salary:</b>{{j.salary}}<br>
+<b>Location:</b>{{j.location}}<br>
+<b>Company Name:</b>{{j.companyName}}<br>
+<b>Posted On:</b>{{j.postedOn | date:'yyyy-MM-dd'}}<br>
+
+</div>
+<!-- </form> -->
+</div>
+
+</div>
+</div>
+</div>
+</div></div>
+
+
+<!--      <div class="wrapper"> 
+    <form class="form-signin">       
+      <h2 class="form-signin-heading">Create a new account</h2>
+      <h4>User Name:</h4> <input type="text" class="form-control" ng-model="user.username" placeholder="" required/>
+     <h4>Password:</h4><input type="password" class="form-control"  ng-model="user.password" placeholder="" required/>      
+     
+    <h4>First Name:</h4><input type="text" class="form-control" ng-model="user.firstname" placeholder="" required/>
+      <h4>Last Name:</h4><input type="text" class="form-control" ng-model="user.lastname" placeholder="" required/>
+      
+      <h4>E-mail:</h4><input type="text" class="form-control" ng-model="user.email" placeholder="" required/>
+      <h4>Phone Number:</h4><input type="text" class="form-control" ng-model="user.mobile" placeholder="" required/>
+      Select Role<h4><input type="radio" value="Student" ng-model="user.role">Student</h4>
+      <h4><input type="radio" value="Alumini" ng-model="user.role">Alumini</h4>
+      <h4><input type="radio" value="Employee" ng-model="user.role">Employee</h4>
+      <input type="hidden" value="0" ng-model="user.online">
+     <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="registerUser()">Sign Up</button>   
+    </form>
+   </div>
+ -->  
+  
+
+ 

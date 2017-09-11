@@ -3,6 +3,7 @@ package com.niit.configuration;
 import java.util.Properties;
 
 
+
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp.BasicDataSource;
@@ -14,6 +15,7 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.model.*;
+import com.niit.model.Error;
 @Configuration
 @EnableTransactionManagement
 public class DBConfig {
@@ -26,7 +28,7 @@ public class DBConfig {
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
 		//Class classes[]=new Class[]{Person.class};
-		Class classes[]=new Class[]{User.class};
+		Class classes[]=new Class[]{User.class,Blog.class,Job.class,ProfileImage.class,Friend.class,Error.class};
 	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 	}
 	@Bean

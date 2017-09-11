@@ -3,12 +3,12 @@ package com.niit.dao;
 import com.niit.model.User;
 
 public interface UserDAO {
-	void registerUser(User user);
-	User validateUsername(String username);
-	User validateEmail(String email);
-	User login(User user);
-	void updateUser(User user);
-	User getUserByUsername(String username);
+	public void registerUser(User user);
+	public User validateUsername(String username);
+	public User validateEmail(String email);
+	public User login(User user);
+	public void updateUser(User user);
+	public User getUserByUsername(String username);
 	
 
 }

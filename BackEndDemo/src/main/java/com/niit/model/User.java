@@ -21,6 +21,13 @@ public class User {
 	private String lastname;
 	@NotEmpty
 	private String password;
+	private String mobile;
+	private String role;
+	@Column(unique=true,nullable=false)
+	private String email;
+	@Column(name="onlne_status")
+	private boolean online;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -69,10 +76,11 @@ public class User {
 	public void setOnline(boolean online) {
 		this.online = online;
 	}
-	private String mobile;
-	private String role;
-	@Column(unique=true,nullable=false)
-	private String email;
-	@Column(name="onlne_status")
-	private boolean online;
+	/*private boolean enabled;
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}*/
 }
