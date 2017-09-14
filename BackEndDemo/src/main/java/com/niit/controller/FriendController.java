@@ -41,5 +41,46 @@ public class FriendController {
 		return new ResponseEntity<List<User>>(suggestedUser,HttpStatus.OK);
 		
 	}
+	@RequestMapping(value="/addfriendrequest",method=RequestMethod.POST)
+	public ResponseEntity<?> addFriendRequest(@PathVariable("toId") String toId,HttpSession session){
+		if(session.getAttribute("username")==null){
+			 Error error = new Error(5, "Unauthorized user");
+				return new ResponseEntity<Error>(error, HttpStatus.UNAUTHORIZED);
+		}
+		String username=(String)session.getAttribute("username");
+friendDAO.addFriendRequest(username, toId);
+return new ResponseEntity<Void>(HttpStatus.OK);
+	}
 	
+	@RequestMapping(value="/getpendingrequest",method=RequestMethod.GET)
+	public ResponseEntity<?> getPendingRequest(HttpSession session){
+		if(session.getAttribute("username")==null){
+			 Error error = new Error(5, "Unauthorized user");
+				return new ResponseEntity<Error>(error, HttpStatus.UNAUTHORIZED);
+		}
+		String username=(String)session.getAttribute("username");
+		List<Friend> pendingRequest=friendDAO.getPendingRequest(username);
+		return new ResponseEntity<List<Friend>>(pendingRequest,HttpStatus.OK);
+	}
+	
+	@RequestMapping(value="/updatependingrequest",method=RequestMethod.PUT)
+	public ResponseEntity<?> updatePendingRequest(@RequestBody Friend pendingRequest,HttpSession session){
+		if(session.getAttribute("username")==null){
+			 Error error = new Error(5, "Unauthorized user");
+				return new ResponseEntity<Error>(error, HttpStatus.UNAUTHORIZED);
+		}
+		friendDAO.updatePendingRequest(pendingRequest);
+		return new ResponseEntity<Friend>(pendingRequest,HttpStatus.OK);
+	}
+	
+	@RequestMapping(value="/getuserdetails",method=RequestMethod.GET)
+	public ResponseEntity<?> getUserDetails(@PathVariable("fromId") String fromId,HttpSession session){
+		if(session.getAttribute("username")==null){
+			 Error error = new Error(5, "Unauthorized user");
+				return new ResponseEntity<Error>(error, HttpStatus.UNAUTHORIZED);
+		}
+		String username=(String)session.getAttribute("username");
+userDAO.validateUsername(username);
+return new ResponseEntity<Void>(HttpStatus.OK);
+	}
 }

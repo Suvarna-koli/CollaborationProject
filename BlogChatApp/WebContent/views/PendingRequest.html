@@ -1,1 +1,39 @@
-Pending req
+<table class="table table-responsive">
+<thead>
+<tr>
+<td>From</td>
+<td>   Accept</td>
+<td>   Deny</td>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="request in pendingRequest">
+<td>{{request.fromId}}</td>
+
+
+<td><img src="http://localhost:8087/BackEndDemo/getprofilepic/{{request.fromId}}" width="35px" height="30px"  class="btn btn-default" >Accept</a></td>
+<td><a href="" class="btn btn-default" >Accept</a></td>
+<td><a href="" class="btn btn-default" >Deny</a></td>
+<td><a href="" class="btn btn-default" ng-click="updateRequest(request,'A')">Accept</a></td>
+<td><a href="" class="btn btn-default" ng-click="updateRequest(request,'D')">Reject</a></td>
+
+<td><a href="" ng-click="addFriendRequest(user.username)"></a></td>
+
+</tr>
+</tbody>
+</table>
+<div><font color="MIDNIGHTBLUE" size="4px">
+<table class="table table-responsive">
+<thead>
+<tr><td>Name</td> <td>Profile</td> </tr>
+</thead>
+<tbody>
+<tr  ng-repeat="request in pendingrequestslist">
+<td><a href="#/userdetail/{{request.fromId}}">{{request.fromId}}</a></td><td><img src="http://localhost:8087/ChatAppBackend/getprofilepic/{{request.fromId}}" width="50px" height="50px" class="img-rounded"></td>
+<td><a href="" class="btn btn-default" ng-click="updateRequest(request,'A')">Accept</a></td>
+<td><a href="" class="btn btn-default" ng-click="updateRequest(request,'D')">Reject</a></td>
+</tr>
+</tbody>
+</table>
+</font>
+</div>

@@ -3,18 +3,22 @@ package com.niit.dao;
 import java.util.List;
 
 import com.niit.model.Blog;
+import com.niit.model.BlogComment;
 
 public interface BlogPostDAO {
 
 	public void saveBlog(Blog blogPost);
 
-	public List getblogs(int approved);
+	public List getBlogs(int approved);
 
 	public Blog getBlogById(int blogid);
 
 	public void updateBlogPost(Blog blogPost);
 
-	/*void addComment(BlogComment blogComment);
+	void addComment(BlogComment blogComment);
+	/*
 
 	List<BlogComment> getBlogComments(int blogId);*/
+	
+	public List getBlogComments(int blogid);
 }

@@ -45,74 +45,75 @@
 				<a class="navbar-brand" href=""><i class="fa fa-home"></i></a>
 			</div> -->
 			<ul class="nav navbar-nav navbar-left">
-				<li><a href="#/Userhome"><span class="glyphicons glyphicons-home" style="color:white"></span><font face="" size="5px" color="white">Home</font></a></li>
-				<li><a href="ContactUs"><font face="" size="3px" color="white">ContactUs</font></a></li>
+				<li><a href="#/Userhome"><span class="glyphicon glyphicon-home" style="color:black"></span><font face="" size="3px" color="black">Home</font></a></li>
+				<li><a href="#/contactus"><font face="" size="3px" color="black">ContactUs</font></a></li>
  <li class="dropdown"><a href="#" class="hover-red"
-					data-toggle="dropdown" ng-show="currentUser.firstname"><span class="glyphicons glyphicons-blog" style="color:white"></span>
-					<font face="" size="3px" color="white">Blogs</font>
-  <span class="caret" style="color:white"></span></a>
+					data-toggle="dropdown" ng-show="currentUser.firstname"><span class="glyphicon glyphicon-blog" style="color:black"></span>
+					<font face="" size="3px" color="black">Blogs</font>
+  <span class="caret" style="color:black"></span></a>
   <ul class="dropdown-menu">
 
-						<li><a href="#/saveblogs" ng-show="currentUser.firstname"><font face="" size="3px" color="white">Write Blog </font></a></li>
-<li><a href="#/getallblogs"><font face="" size="3px" color="white">View Blog </font></a></li>
+						<li><a href="#/saveblogs" ng-show="currentUser.firstname"><font face="" size="3px" color="black">Write Blog </font></a></li>
+<li><a href="#/getallblogs"><font face="" size="3px" color="black">View Blog </font></a></li>
 
 					</ul>
 </li>
 	<li class="dropdown"><a href="#" class="hover-red"
 					data-toggle="dropdown" ng-show="currentUser.firstname">
-					<span class="glyphicons glyphicons-suitcase" style="color:white"></span>
-					<font face="" size="3px" color="white">Jobs</font>
-  <span class="caret" style="color:white"></span></a>
+					<span class="glyphicon glyphicon-suitcase" style="color:black"></span>
+					<font face="" size="3px" color="black">Jobs</font>
+  <span class="caret" style="color:black"></span></a>
   <ul class="dropdown-menu" color="red">
 
-						<li><a href="#/getAllJobs" ng-show="currentUser.firstname"><font face="" size="3px" color="white">Show Job Details </font></a></li>
+						<li><a href="#/getAllJobs" ng-show="currentUser.firstname"><font face="" size="3px" color="black">Show Job Details </font></a></li>
 <!-- <li><a href="#/saveJob" ng-show="currentUser.firstname">Save Job </a></li> -->
- <li><a href="#/saveJob" ng-show="currentUser.role=='Admin'"><font face="" size="3px" color="white">Save Job</font> </a></li>
+ <li><a href="#/saveJob" ng-show="currentUser.role=='Admin'"><font face="" size="3px" color="black">Save Job</font> </a></li>
  
 					</ul>
 </li>
 <li class="dropdown"><a href="#" class="hover-red"
-					data-toggle="dropdown" ng-show="currentUser.firstname"><font face="" size="3px" color="white">Forums</font>
-  <span class="caret" style="color:white"></span></a>
+					data-toggle="dropdown" ng-show="currentUser.firstname"><font face="" size="3px" color="black">Forums</font>
+  <span class="caret" style="color:black"></span></a>
   <ul class="dropdown-menu" color="red">
 
-						<li><a href="#"><font face="" size="3px" color="white">forum1 </font></a></li>
-<li><a href="#"><font face="" size="3px" color="white">Forum2</font> </a></li>
+						<li><a href="#"><font face="" size="3px" color="black">forum1 </font></a></li>
+<li><a href="#"><font face="" size="3px" color="black">Forum2</font> </a></li>
 
 					</ul>
 </li>
 <li class="dropdown"><a href="#" class="hover-red"
-					data-toggle="dropdown" ng-show="currentUser.firstname"><font face="" size="3px" color="white">Friends</font>
-  <span class="caret" style="color:white"></span></a>
+					data-toggle="dropdown" ng-show="currentUser.firstname"><font face="" size="3px" color="black">Friends</font>
+  <span class="caret" style="color:black"></span></a>
   <ul class="dropdown-menu" color="red">
 
-						<li><a href="#/listOfSuggestedUser" ng-show="currentUser.firstname"><font face="" size="3px" color="white">Suggested Users</font></a></li>
-<li><a href="#/listOfPendingReq" ng-show="currentUser.firstname"><font face="" size="3px" color="white">Pending Request</font> </a></li>
+						<li><a href="#/listOfSuggestedUser" ng-show="currentUser.firstname"><font face="" size="3px" color="black">Suggested Users</font></a></li>
+<li><a href="#/listOfPendingReq" ng-show="currentUser.firstname"><font face="" size="3px" color="black">Pending Request</font> </a></li>
 
 					</ul>
 </li>
 <!-- <li><a href="#/listOfSuggestedUser" ng-show="currentUser.firstname"><font face="" size="3px" color="black">Friends</font></a></li> -->
 </ul>
 			<ul class="nav navbar-nav navbar-right">
-<li><a href="" ng-show="currentUser.firstname"><font face="" size="3px" color="white">
+<li><a href="" ng-show="currentUser.firstname"><font face="" size="3px" color="black">
  Welcome: {{currentUser.firstname}} {{currentUser.lastname}}</font></a></li>
-				<li><a href="#/registerUser" ng-hide="currentUser.firstname"><span
-						class="glyphicon glyphicon-user" style="color:white"></span>
-						<font face="" size="3px" color="white">Sign Up</font></a></li>
-				<li><a href="#/validateUser" ng-hide="currentUser.firstname"><span
-						class="glyphicon glyphicon-log-in" style="color:white"></span>
-						<font face="" size="3px" color="white"> Login</font></a></li>
-						<li><a href="#/logout" ng-click="logout()" ng-controller="UserController" ng-show="currentUser.firstname">
-						<span class="glyphicon glyphicon-user" style="color:white"></span>
-						<font face="" size="3px" color="white"> LogOut</font></a></li>
-						<!-- <li><a href="#/profilepic" ng-show="currentUser.firstname"><span
-						class="glyphicon " style="color:black"></span>
-						<font face="" size="3px" color="black"> Upload Pic</font></a></li> -->
-						  <li><a href="#/profilepic" ng-show="currentUser.username">
-                    <img src="http://localhost:8087/BackEndDemo/getprofilepic/{{currentUser.username}}" alt="Upload Picture" width="30px" height="20px" class="img-rounded">
+ <li><a href="#/profilepic" ng-show="currentUser.username">
+                    <img src="http://localhost:8087/BackEndDemo/getprofilepic/{{currentUser.username}}" alt="Upload Picture" width="35px" height="30px" class="img-rounded">
                     </a></li>
-						<li><a href="#/editProfile" ng-show="currentUser.firstname"><span class="glyphicon glyphicon-edit" style="color:white"></span>
-						<font face="" size="3px" color="white">Edit User Profile</font></a></li>
+				
+				<li><a href="#/registerUser" ng-hide="currentUser.firstname"><span
+						class="glyphicon glyphicon-user" style="color:black"></span>
+						<font face="" size="3px" color="black">Sign Up</font></a></li>
+				
+				<li><a href="#/validateUser" ng-hide="currentUser.firstname"><span
+						class="glyphicon glyphicon-log-in" style="color:black"></span>
+						<font face="" size="3px" color="black"> Login</font></a></li>
+						
+						<li><a href="#/logout" ng-click="logout()" ng-controller="UserController" ng-show="currentUser.firstname">
+						<span class="glyphicon glyphicon-user" style="color:black"></span>
+						<font face="" size="3px" color="black"> LogOut</font></a></li>
+						  
+						<li><a href="#/editProfile" ng-show="currentUser.firstname"><span class="glyphicon glyphicon-edit" style="color:black"></span>
+						<font face="" size="3px" color="black">Edit User Profile</font></a></li>
 			
 
 			</ul>

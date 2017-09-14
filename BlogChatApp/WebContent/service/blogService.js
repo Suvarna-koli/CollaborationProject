@@ -1,4 +1,4 @@
-0/**
+/**
  * 
  */
 app.factory('BlogService',function($http){
@@ -19,6 +19,12 @@ app.factory('BlogService',function($http){
 	}
 	blogService.UpdateBlogPost=function(blogPost){
 		return $http.put(BASE_URL+"/updateblogpost/"+blogPost)
+	}
+	blogService.AddBlogComment=function(blogComment){
+		return $http.post(BASE_URL+"/commentblog/"+blogComment)
+	}
+	blogService.GetBlogComments=function(blogid){
+		return $http.get(BASE_URL+"/getcomments/"+blogid)
 	}
 	return blogService;
 })

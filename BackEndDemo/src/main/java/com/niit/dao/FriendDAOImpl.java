@@ -33,6 +33,33 @@ private SessionFactory sessionFactory;
 	}
 
 	
+	public void addFriendRequest(String username, String toId) {
+		Session session=sessionFactory.getCurrentSession();
+		Friend friend=new Friend();
+		friend.setFromId(username);
+		friend.setToId(toId);
+		friend.setStatus('P');
+		session.save(friend);
+		
+	}
+
+
+	
+	public List<Friend> getPendingRequest(String username) {
+		Session session=sessionFactory.getCurrentSession();
+		Query query=session.createQuery("from Friend where status='P' and toId=?");
+		query.setString(0, username);
+		return query.list();
+		
+	}
+
+
+	
+	public void updatePendingRequest(Friend pendingRequest) {
+		Session session=sessionFactory.getCurrentSession();
+		session.update(pendingRequest);
+		
+	}
 	
 
 }

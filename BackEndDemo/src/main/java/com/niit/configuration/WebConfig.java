@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages="com.niit")
-
+//it is as like dispatcher file
 public class WebConfig extends  WebMvcConfigurerAdapter {
 	public void AddResourceHandler(ResourceHandlerRegistry registry)
 	{
@@ -22,8 +22,8 @@ public class WebConfig extends  WebMvcConfigurerAdapter {
 	@Bean(name = "multipartResolver")
 	public CommonsMultipartResolver getCommonsMultipartResolver() {
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-		multipartResolver.setMaxUploadSize(50971520); // 50MB
-		multipartResolver.setMaxInMemorySize(1048576);	// 1MB
+		multipartResolver.setMaxUploadSize(10971520); // 10MB
+		
 		return multipartResolver;
 	}
 

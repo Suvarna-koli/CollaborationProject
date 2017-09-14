@@ -12,6 +12,10 @@ app.config(function($routeProvider){
 		//controller:'PersonController',
 		templateUrl:'views/UserHome.html'
 	})
+	.when('/contactus',{
+		//controller:'PersonController',
+		templateUrl:'views/ContactUs.html'
+	})
 	.when('/registerUser',{
 		controller:'UserController',
 		templateUrl:'views/SignUp.html'
@@ -66,6 +70,7 @@ app.config(function($routeProvider){
 		controller:'FriendController',
 	templateUrl:'views/PendingRequest.html'	
 	})
+	
 	.when('/getUserDetails/fromId',{
 		controller:'FriendDetailController',
 	templateUrl:'views/FrUserDetails.html'	

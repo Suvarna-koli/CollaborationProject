@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.model.Blog;
+import com.niit.model.BlogComment;
 
 @Repository
 @Transactional
@@ -27,7 +28,7 @@ public class BlogPostDAOImpl implements BlogPostDAO {
 
 	}
 	
-	public List<Blog> getblogs(int approved) {
+	public List<Blog> getBlogs(int approved) {
 		Session session=sessionFactory.getCurrentSession();
 		Query query=session.createQuery("from Blog where approved="+approved);
        return query.list();
@@ -46,23 +47,22 @@ public class BlogPostDAOImpl implements BlogPostDAO {
 		
 	}
 
-
-
-/*	public void addComment(BlogComment blogComment) {
-		Session session=sessionFactory.openSession();
+		public void addComment(BlogComment blogComment) {
+		Session session=sessionFactory.getCurrentSession();
 		session.save(blogComment);
-		session.flush();
-		session.close();
+		
 		
 	}
 
-	public List<BlogComment> getBlogComments(int blogId) {
-	 Session session=sessionFactory.openSession();
-	Query query=session.createQuery("from BlogComment where blogPost.id="+blogId);
-	List<BlogComment> blogComments=query.list();
-	System.out.println(blogComments);
-	session.close();
-	return blogComments;
-	}*/
+	public List getBlogComments(int blogid) {
+	 Session session=sessionFactory.getCurrentSession();
+	Query query=session.createQuery("from BlogComment where blogPost.blogid="+blogid);
+	return query.list();
+	
+	}
+
+	
+
+	
 
 }
