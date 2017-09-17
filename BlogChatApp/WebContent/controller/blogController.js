@@ -5,13 +5,13 @@ app.controller('BlogController',function(BlogService,$scope,$location){
 	BlogService.getBlogPostsWaitingForApproval().then(function(response){
 		$scope.blogWaiting=response.data;
 	},function(response){
-		if(response.status==401)
+		//if(response.status==401)
 			$location.path('/validateUser')
 	})
 	
 	
 	BlogService.getBlogPostsApproved().then(function(response){
-		$scope.blogPostsApproved=response.data
+		$scope.blogPostsApproved=response.data;
 		
 	},function(response){
 		if(response.status==401)
@@ -32,7 +32,8 @@ app.controller('BlogController',function(BlogService,$scope,$location){
 			error=response.data
 			alert(error.message)
 			$location.path('/validateUser')
-			$location.path('/saveBlog')
+			//$location.path('/saveBlog')
+			$location.path('/saveblogs')
 		})
 	}
 })

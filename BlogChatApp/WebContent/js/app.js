@@ -76,6 +76,11 @@ app.config(function($routeProvider){
 	templateUrl:'views/FrUserDetails.html'	
 	})
 	
+	
+	.when('/chat',{
+		templateUrl:'views/chat.html',
+		controller:'ChatCtrl'
+	})
 	.otherwise({
 		templateUrl : 'views/UserHome.html'
 

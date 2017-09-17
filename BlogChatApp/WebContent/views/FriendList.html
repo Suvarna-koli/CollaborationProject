@@ -1,0 +1,15 @@
+<div><font color="MIDNIGHTBLUE" size="4px">
+<table class="table table-responsive">
+<thead>
+<tr><th>Name</th><th>Profile</th></tr>
+</thead>
+<tbody>
+<tr ng-repeat="user in friendlist">
+<td ng-hide="user.fromId==currentUser.username">{{user.fromId}}</td><td  ng-hide="user.toId==currentUser.username">{{user.toId}}</td>
+<td><img src="http://localhost:8087/ChatAppBackend/getprofilepic/{{user.fromId}}" width="50px" height="50px" class="img-rounded" ng-hide="user.fromId==currentUser.username"></td>
+
+<td><img src="http://localhost:8087/ChatAppBackend/getprofilepic/{{user.toId}}" width="50px" height="50px" class="img-rounded" ng-hide="user.toId==currentUser.username"></td>
+</tr>
+</tbody>
+</table></font>
+</div>

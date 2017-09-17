@@ -16,6 +16,8 @@
 
 </div>
 <form>
-<textarea rows="4" cols="15"></textarea>
-<input type="submit" ng-click="">
+
+<input type="radio" ng-model="blogPost.approved" value="True"><label>Approve</label>&nbsp;&nbsp;	
+<input type="radio" ng-model="blogPost.approved" value="False"><label>Reject</label>
+<input type="submit" ng-click="UpdateBlogPost()">
 </form>

@@ -18,10 +18,10 @@ app.factory('BlogService',function($http){
 		return $http.get(BASE_URL+"/getblogpostbyid/"+blogid)
 	}
 	blogService.UpdateBlogPost=function(blogPost){
-		return $http.put(BASE_URL+"/updateblogpost/"+blogPost)
+		return $http.put(BASE_URL+"/updateblogpost/",blogPost)
 	}
 	blogService.AddBlogComment=function(blogComment){
-		return $http.post(BASE_URL+"/commentblog/"+blogComment)
+		return $http.post(BASE_URL+"/commentblog/",blogComment)
 	}
 	blogService.GetBlogComments=function(blogid){
 		return $http.get(BASE_URL+"/getcomments/"+blogid)
