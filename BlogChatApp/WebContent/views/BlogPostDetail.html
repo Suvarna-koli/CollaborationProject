@@ -3,21 +3,22 @@
 <div class="panel panel-default">
 <div class="panel-heading">
 <div>{{blogPost.blogtitle}}</div>
-<span><strong>Posted By:</strong>{{blogPost.createdBy.username}}</span>
+<span><strong>Posted By:</strong>{{blogPost.createdBy.firstname}}</span>
 <span><strong>On:</strong>{{blogPost.postedOn | date:'medium'}}</span>
 
 </div>
 <div class="panel-body">
 {{blogPost.description}}
 </div>
-
 </div>
 </div>
 
 </div>
+<div>
 <form>
 
 <input type="radio" ng-model="blogPost.approved" value="True"><label>Approve</label>&nbsp;&nbsp;	
 <input type="radio" ng-model="blogPost.approved" value="False"><label>Reject</label>
 <input type="submit" ng-click="UpdateBlogPost()">
 </form>
+</div>

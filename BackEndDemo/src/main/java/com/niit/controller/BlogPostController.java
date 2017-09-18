@@ -62,6 +62,7 @@ public class BlogPostController {
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);//401 - 2nd call back func will be executed
 		}
 		List<Blog> bloglist=blogPostDAO.getBlogs(approved);
+		
 		return new ResponseEntity<List<Blog>>(bloglist,HttpStatus.OK);
 	}
 	@RequestMapping(value="/getblogpostbyid/{blogid}",method=RequestMethod.GET)
@@ -71,6 +72,7 @@ public class BlogPostController {
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);//401 - 2nd call back func will be executed
 		}
 		Blog blogPost=blogPostDAO.getBlogById(blogid);
+		System.out.println(blogPost.getBlogtitle());
 		return new ResponseEntity<Blog>(blogPost,HttpStatus.OK);
 	}
 	

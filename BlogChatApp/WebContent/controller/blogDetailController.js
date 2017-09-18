@@ -2,9 +2,11 @@
  * 
  */
 app.controller('BlogDetailController', function(BlogService,$scope,$location,$routeParams,$rootScope) {
+	alert("in blog by id controller")
 	var blogid=$routeParams.blogid
 	
 	$scope.blogPost = BlogService.getBlogPostById(blogid).then(function(response) {
+		
 		$scope.blogPost= response.data
 		console.log(response.status)
 	}, function(response) {
@@ -40,23 +42,7 @@ app.controller('BlogDetailController', function(BlogService,$scope,$location,$ro
 		})
 	}
 	
-	 /*function showComments(){
-		
-		BlogPostService.showComments(blogid).then(function(response){
-			console.log(response.data)
-			console.log(response.status)
-			$scope.blogcomments=response.data
-			
-			
-		},function(response)
-		{
-			console.log(response.status)
-			if(response.status==401)
-			$location.path('/login')
-			$scope.error=response.data
-			
-		})
-	}*/
+	
 	
 	$scope.GetBlogComments=function(blogid){
 		

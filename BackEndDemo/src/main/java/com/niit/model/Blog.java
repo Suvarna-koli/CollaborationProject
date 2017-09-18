@@ -30,15 +30,16 @@ public class Blog {
 	@ManyToOne
 	@JoinColumn(name="username")
 	private User createdBy;
+	public int getBlogid() {
+		return blogid;
+	}
+	public void setBlogid(int blogid) {
+		this.blogid = blogid;
+	}
 	private Date postedOn;
 	private boolean approved;
 	
-	public int getId() {
-		return blogid;
-	}
-	public void setId(int blogid) {
-		this.blogid = blogid;
-	}
+	
 	public String getBlogtitle() {
 		return blogtitle;
 	}

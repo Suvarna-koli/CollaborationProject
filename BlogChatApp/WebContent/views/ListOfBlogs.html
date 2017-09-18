@@ -19,7 +19,7 @@ List of Blog Posts which are approved<br>
 </thead>
 <tbody>
 <tr ng-repeat="blog in blogPostsApproved">
-<td><a href="#/approveblogpost/{{blog.blogid}}">{{blog.blogtitle}}</a></td><td>{{blog.postedBy.username}}</td><td>{{blog.postedOn | date:'yyyy/MM/dd'}}</td>
+<td><a href="#/approveblogpost/{{blog.blogid}}">{{blog.blogtitle}}</a></td><td>{{blog.createdBy.firstname}}</td><td>{{blog.postedOn | date:'yyyy/MM/dd'}}</td>
 </tr>
 </tbody>
 </table>
