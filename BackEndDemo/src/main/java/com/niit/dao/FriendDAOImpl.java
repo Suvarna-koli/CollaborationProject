@@ -22,7 +22,7 @@ private SessionFactory sessionFactory;
 	
 	public List<User> getListOfSuggUser(String username) {
 		Session session=sessionFactory.getCurrentSession();
-		String queryString="select * from user_table1 where username in (select username from user_table1 where username!=? minus (select fromId from friend where toId=? union select toId from friend where fromId=?))";
+		String queryString="select * from user_table1 where username in (select username from user_table1 where username!=? minus (select fromId from Friend where toId=? union select toId from Friend where fromId=?))";
 		SQLQuery query=session.createSQLQuery(queryString);
 		query.setString(0, username);
 		query.setString(1, username);
@@ -47,7 +47,7 @@ private SessionFactory sessionFactory;
 	
 	public List<Friend> getPendingRequest(String username) {
 		Session session=sessionFactory.getCurrentSession();
-		Query query=session.createQuery("from Friend where status='P' and toId=?");
+		Query query=session.createQuery("from Friend where toId=? and status='P'");
 		query.setString(0, username);
 		return query.list();
 		
@@ -60,6 +60,16 @@ private SessionFactory sessionFactory;
 		session.update(pendingRequest);
 		
 	}
+	public List<Friend> listOfFriends(String username) {
+		Session session=sessionFactory.getCurrentSession();
+		Query query=session.createQuery("from Friend where (fromId=? or toId=?) and status='A'");
+		query.setString(0,username);
+		query.setString(1,username);
+		
+		return query.list();
+		
+	}
+
 	
 
 }

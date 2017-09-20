@@ -25,8 +25,8 @@ app.controller('FriendController',function($scope,$location,FriendService){
 		console.log(response.status)
 		})
 		}
-	function FriendRequest(){
-		FriendService.FriendRequest(toId).then(function(response){
+	function addFriendRequest(){
+		FriendService.addFriendRequest(toId).then(function(response){
 			listOfSuggestedUser()
 			$location.path('/getSuggestedUser')
 		},function(response){

@@ -1,24 +1,32 @@
+
+<div class="container">
+
 <div class="row">
+ <div class="col-sm-6 col-md-4 col-md-offset-4">
+<div class="account-wall">
 <div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<div>{{blogPost.blogtitle}}</div>
+<form>
+
+<label>{{blogPost.blogtitle}}</label>
 <span><strong>Posted By:</strong>{{blogPost.createdBy.firstname}}</span>
 <span><strong>On:</strong>{{blogPost.postedOn | date:'medium'}}</span>
 
-</div>
-<div class="panel-body">
-{{blogPost.description}}
-</div>
-</div>
-</div>
 
-</div>
-<div>
-<form>
+<label>{{blogPost.description}}
+</label>
+
+
+
+
 
 <input type="radio" ng-model="blogPost.approved" value="True"><label>Approve</label>&nbsp;&nbsp;	
 <input type="radio" ng-model="blogPost.approved" value="False"><label>Reject</label>
 <input type="submit" ng-click="UpdateBlogPost()">
 </form>
+
+</div>
+</div>
+
+</div>
+</div>
 </div>

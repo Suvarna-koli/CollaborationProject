@@ -93,7 +93,7 @@ public class BlogPostController {
 
 	}
 	@RequestMapping(value="/commentblog",method=RequestMethod.POST)
-	public ResponseEntity<?> blogComment(@RequestBody BlogComment blogComment,HttpSession session)
+	public ResponseEntity<?> saveblogComment(@RequestBody BlogComment blogComment,HttpSession session)
 	{
 		if(session.getAttribute("username")==null){
 			Error error=new Error(5,"Unauhorized");

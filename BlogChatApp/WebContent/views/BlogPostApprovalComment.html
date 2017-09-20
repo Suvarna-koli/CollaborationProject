@@ -1,0 +1,20 @@
+
+<div>
+<form>
+
+<label>
+{{blogPost.blogtitle}}</label>
+<br>
+<h4><span class="glyphicon glyphicon-time">PostedBy:{{blogPost.createdBy.firstname}} On:{{blogPost.postedOn | date:'yyyy-MM-dd'}}</span>
+<br><br>
+<label>{{blogPost.description}}</label><br><br>
+Leave a Comment:<br><textarea rows="3" cols="50" ng-model="blogComment.commentText"></textarea>
+&nbsp;&nbsp;
+<button type="submit" class="btn btn-lg" ng-click="savecomment()">Comment</button>
+<br><br>
+<button type="submit"  class="btn btn-lg" ng-click="showComments(blogPost.blogid)">Show comments</button><br><br>
+<ul><li ng-repeat="blogcomment in blogcomments">
+<label>{{blogcomment.commentText}}</label></li></ul>
+
+</form>
+</div>

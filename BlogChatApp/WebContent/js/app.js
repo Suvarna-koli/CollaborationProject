@@ -55,7 +55,7 @@ app.config(function($routeProvider){
 	
 	.when('/approveblogpost/:blogid',{
 		controller:'BlogDetailController',
-	templateUrl:'views/BlogPostApprovalForm.html'	
+	templateUrl:'views/BlogPostApprovalComment.html'	
 	})
 	
 	.when('/profilepic',{

@@ -16,6 +16,7 @@ app.controller('BlogDetailController', function(BlogService,$scope,$location,$ro
 	})
 
 	$scope.UpdateBlogPost = function() {
+		alert("Update func")
 		BlogService.UpdateBlogPost($scope.blogPost).then(function(response) {
 			console.log(response.status)
 			alert("Updated Successsfully")
@@ -44,7 +45,7 @@ app.controller('BlogDetailController', function(BlogService,$scope,$location,$ro
 	
 	
 	
-	$scope.GetBlogComments=function(blogid){
+	/*$scope.GetBlogComments=function(blogid){
 		
 		BlogPostService.GetBlogComments(blogid).then(function(response){
 			console.log(response.data)
@@ -57,6 +58,23 @@ app.controller('BlogDetailController', function(BlogService,$scope,$location,$ro
 			console.log(response.status)
 			if(response.status==401)
 			$location.path('/validateUser')
+			$scope.error=response.data
+			
+		})
+	}*/
+	function GetBlogComments(){
+		
+		BlogPostService.showComments(blogid).then(function(response){
+			console.log(response.data)
+			console.log(response.status)
+			$scope.blogcomments=response.data
+			
+			
+		},function(response)
+		{
+			console.log(response.status)
+			if(response.status==401)
+			$location.path('/login')
 			$scope.error=response.data
 			
 		})
