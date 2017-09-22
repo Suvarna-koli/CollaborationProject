@@ -19,8 +19,7 @@ import com.niit.model.User;
 public class FriendDAOImpl implements FriendDAO {
 @Autowired
 private SessionFactory sessionFactory;
-	
-	public List<User> getListOfSuggUser(String username) {
+public List<User> getListOfSuggUser(String username) {
 		Session session=sessionFactory.getCurrentSession();
 		String queryString="select * from user_table1 where username in (select username from user_table1 where username!=? minus (select fromId from Friend where toId=? union select toId from Friend where fromId=?))";
 		SQLQuery query=session.createSQLQuery(queryString);
@@ -62,6 +61,7 @@ private SessionFactory sessionFactory;
 	}
 	public List<Friend> listOfFriends(String username) {
 		Session session=sessionFactory.getCurrentSession();
+		System.out.println("in list daoImpl");
 		Query query=session.createQuery("from Friend where (fromId=? or toId=?) and status='A'");
 		query.setString(0,username);
 		query.setString(1,username);

@@ -13,12 +13,12 @@ jobService.saveJob=function(job){
 }
 jobService.getAllJobs=function(){
 
-	return $http.get("http://localhost:8087/BackEndDemo/getAllJobs")
+	return $http.get("http://localhost:8087/BackEndDemo/showjob")
 	
 }
 jobService.getJobById=function(id){
 
-	return $http.get("http://localhost:8087/BackEndDemo/getJobById"+id)
+	return $http.get("http://localhost:8087/BackEndDemo/getJobById/"+id)
 	
 }
 

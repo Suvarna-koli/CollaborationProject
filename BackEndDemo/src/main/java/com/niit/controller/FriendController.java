@@ -41,8 +41,9 @@ public class FriendController {
 		return new ResponseEntity<List<User>>(suggestedUser,HttpStatus.OK);
 		
 	}
-	@RequestMapping(value="/addfriendrequest",method=RequestMethod.POST)
+	@RequestMapping(value="/addfriendrequest/{toId}",method=RequestMethod.POST)
 	public ResponseEntity<?> addFriendRequest(@PathVariable("toId") String toId,HttpSession session){
+		System.out.println("send friend request"+toId);
 		if(session.getAttribute("username")==null){
 			 Error error = new Error(5, "Unauthorized user");
 				return new ResponseEntity<Error>(error, HttpStatus.UNAUTHORIZED);
@@ -73,7 +74,7 @@ return new ResponseEntity<Void>(HttpStatus.OK);
 		return new ResponseEntity<Friend>(pendingRequest,HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/getuserdetails",method=RequestMethod.GET)
+	@RequestMapping(value="/getuserdetails/{fromId}",method=RequestMethod.GET)
 	public ResponseEntity<?> getUserDetails(@PathVariable("fromId") String fromId,HttpSession session){
 		if(session.getAttribute("username")==null){
 			 Error error = new Error(5, "Unauthorized user");
@@ -82,5 +83,17 @@ return new ResponseEntity<Void>(HttpStatus.OK);
 		String username=(String)session.getAttribute("username");
 userDAO.validateUsername(username);
 return new ResponseEntity<Void>(HttpStatus.OK);
+	}
+	@RequestMapping(value="/getfriendlist", method=RequestMethod.GET)
+	public ResponseEntity<?> listOfFriends(HttpSession session)
+	{
+		if(session.getAttribute("username")==null){
+			Error error=new Error(5,"Unauhorized");
+			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
+		}
+		
+		String username=(String) session.getAttribute("username");
+		List<Friend> friendlist=friendDAO.listOfFriends(username);
+		return new ResponseEntity<List<Friend>>(friendlist,HttpStatus.OK);
 	}
 }

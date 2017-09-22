@@ -60,7 +60,7 @@ public class JobController {
 	}
 
 
-	@RequestMapping(value = "/getAllJobs", method = RequestMethod.GET)
+	@RequestMapping(value = "/showjob", method = RequestMethod.GET)
 	public ResponseEntity<?> getAllJobs(HttpSession session) {
 
 		if (session.getAttribute("username") == null) {

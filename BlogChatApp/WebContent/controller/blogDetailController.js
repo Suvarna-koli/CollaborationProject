@@ -5,7 +5,7 @@ app.controller('BlogDetailController', function(BlogService,$scope,$location,$ro
 	alert("in blog by id controller")
 	var blogid=$routeParams.blogid
 	
-	$scope.blogPost = BlogService.getBlogPostById(blogid).then(function(response) {
+	$scope.blogPost= BlogService.getBlogPostById(blogid).then(function(response) {
 		
 		$scope.blogPost= response.data
 		console.log(response.status)
@@ -15,7 +15,7 @@ app.controller('BlogDetailController', function(BlogService,$scope,$location,$ro
 			$location.path('/validateUser')
 	})
 
-	$scope.UpdateBlogPost = function() {
+	$scope.UpdateBlogPost = function(blogPost) {
 		alert("Update func")
 		BlogService.UpdateBlogPost($scope.blogPost).then(function(response) {
 			console.log(response.status)
@@ -32,7 +32,7 @@ app.controller('BlogDetailController', function(BlogService,$scope,$location,$ro
 	$scope.savecomment=function(){
 		
 		$scope.blogComment.blogPost=$scope.blogPost
-		BlogPostService.AddBlogComment($scope.blogComment).then(function(response){
+		BlogService.AddBlogComment($scope.blogComment).then(function(response){
 			alert("Saved successfully")
 		},function(response){
 			console.log(response.status)
@@ -64,7 +64,7 @@ app.controller('BlogDetailController', function(BlogService,$scope,$location,$ro
 	}*/
 	function GetBlogComments(){
 		
-		BlogPostService.showComments(blogid).then(function(response){
+		BlogService.GetBlogComments(blogid).then(function(response){
 			console.log(response.data)
 			console.log(response.status)
 			$scope.blogcomments=response.data
@@ -74,7 +74,7 @@ app.controller('BlogDetailController', function(BlogService,$scope,$location,$ro
 		{
 			console.log(response.status)
 			if(response.status==401)
-			$location.path('/login')
+			$location.path('/validateUser')
 			$scope.error=response.data
 			
 		})

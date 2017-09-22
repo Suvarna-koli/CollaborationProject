@@ -34,7 +34,7 @@ app.config(function($routeProvider){
 		templateUrl:'views/JobForm.html'
 		
 	})
-	.when('/getAllJobs',{
+	.when('/showjob',{
 		controller:'JobController',
 		templateUrl:'views/JobPost.html'
 		
@@ -74,6 +74,10 @@ app.config(function($routeProvider){
 	.when('/getUserDetails/fromId',{
 		controller:'FriendDetailController',
 	templateUrl:'views/FrUserDetails.html'	
+	})
+	.when('/friendlist',{
+		controller:'FriendController',
+		templateUrl:'views/FriendList.html'
 	})
 	
 	

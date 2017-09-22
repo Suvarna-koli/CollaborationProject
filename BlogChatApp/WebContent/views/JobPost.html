@@ -1,41 +1,6 @@
  <span style="color:red">{{error.message}}</span>
 
-<!-- <style>
-.form-showjob
-{
-    max-width:500px;
-     margin: 0 auto; 
-    
-     
-}
-.form-showjob .form-control
-{
-    position: relative;
-    font-size: 16px;
-    height: auto;
-    padding: 10px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.account
-{
-    padding: 10px 0px 20px 0px;
-    background-color: #f7f7f7;
-  	width:600px;
-  	font-size:20px;
-  	align:center;
-  	border: 2px solid white;
-    border-radius: 8px;
-    background-image:url("img/pc1.jpg")";
-}
-.table-responsive .table-hover{
-background-color:#FFFFFF;
-}
-.btn-block{
-background-color:#20B2AA;
-}
-</style> -->
+
   
 <div class="container">
 
@@ -66,16 +31,16 @@ Search:<input ng-model="jobSearch">
 </tbody>
 </table>
 
-<div ng-show="showjobDetails">
+<div ng-show="showjob">
     
-<b>Job Title:</b><font color="black">{{j.jobTitle}}</font><br>
-<b>Job Description:</b>{{j.jobDesc}}<br>
-<b>Skills Required:</b>{{j.skillsRequired}}<br>
-<b>Years Of Experience:</b>{{j.yrsOfExp}}<br>
-<b>Salary:</b>{{j.salary}}<br>
-<b>Location:</b>{{j.location}}<br>
-<b>Company Name:</b>{{j.companyName}}<br>
-<b>Posted On:</b>{{j.postedOn | date:'yyyy-MM-dd'}}<br>
+<b>Job Title:</b><font color="black">{{job.jobTitle}}</font><br>
+<b>Job Description:</b>{{job.jobDesc}}<br>
+<b>Skills Required:</b>{{job.skillsRequired}}<br>
+<b>Years Of Experience:</b>{{job.yrsOfExp}}<br>
+<b>Salary:</b>{{job.salary}}<br>
+<b>Location:</b>{{job.location}}<br>
+<b>Company Name:</b>{{job.companyName}}<br>
+<b>Posted On:</b>{{job.postedOn | date:'yyyy-MM-dd'}}<br>
 
 </div>
 <!-- </form> -->

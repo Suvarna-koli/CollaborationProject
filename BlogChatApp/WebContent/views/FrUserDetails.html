@@ -1,11 +1,15 @@
 <div>
-<table class="table table-responsive">
-<tbody>
-<tr><td><img src="http://localhost:8087/BackEndDemo/getprofilepic/{{user.username}}" width="30px" height="30px" class="img-rounded"></td></tr>
-<tr><td>First Name</td><td>{{user.firstname}}</td></tr>
-<tr><td>Last Name</td><td> {{user.lastname}}</td></tr>
+<div class="row">
+  <div class="col-sm-6 col-md-4 col-md-4">
+<table>
+
+<tr><td><img src="http://localhost:8087/BackEndDemo/getprofilepic/{{user.username}}" width="200px" height="200px" class="img-rounded"></td></tr>
+<br><br><tr><td>Name</td><td>{{user.firstname}} {{user.lastname}}</td>
+</tr>
+<tr><td>Email<td> {{user.email}}</td></tr>
 <tr><td>Role</td><td>{{user.role}}</td></tr>
 <tr><td>UserName</td><td>{{user.username}}</td></tr>
-</tbody>
-</table>
-</div>
+
+</table><br><br>
+<a href="#/pendingrequests"><button type="submit" class="btn btn-lg">Pending req</button></a>
+</div></div></div>

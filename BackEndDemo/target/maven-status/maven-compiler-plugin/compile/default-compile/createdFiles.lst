@@ -1,13 +1,17 @@
 com\niit\controller\JobController.class
 com\niit\dao\UserDAO.class
 com\niit\controller\FriendController.class
+com\niit\model\BlogComment.class
 com\niit\dao\UserDAOImpl.class
 com\niit\dao\FriendDAO.class
 com\niit\controller\UserController.class
 com\niit\dao\JobDAO.class
 com\niit\configuration\DBConfig.class
+com\niit\configuration\WebSocketConfiguration.class
+com\niit\model\Chat.class
 com\niit\model\User.class
 com\niit\dao\PersonDAOImpl.class
+com\niit\controller\SocketController.class
 com\niit\controller\ProfileImageController.class
 com\niit\model\Person.class
 com\niit\model\Blog.class
