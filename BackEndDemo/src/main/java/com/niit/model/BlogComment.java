@@ -20,6 +20,11 @@ public class BlogComment {
 		@ManyToOne
 		@JoinColumn(name="blogid")
 		private Blog blogPost;
+		@ManyToOne
+		@JoinColumn(name="username")
+		private User commentedBy;
+		private Date commentDate;
+		private String commentText;
 		public int getCommentId() {
 			return commentId;
 		}
@@ -50,11 +55,7 @@ public class BlogComment {
 		public void setCommentText(String commentText) {
 			this.commentText = commentText;
 		}
-		@ManyToOne
-		@JoinColumn(name="username")
-		private User commentedBy;
-		private Date commentDate;
-		private String commentText;
+		
 		
 
 }

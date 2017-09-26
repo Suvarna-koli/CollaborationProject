@@ -1,21 +1,62 @@
+<!-- <div class="container">
+		<div class="h2">Blogs</div>
+		<br /><br />
+		<div class="row">
+			<div class="col-sm-9">
+				<div id="custom-search-input">
+					<div class="input-group col-md-12">
+						<input type="text" class="form-control input-lg" placeholder="Search Blogs" ng-model="filterText" /> <span class="input-group-btn">
+							<button class="btn btn-info btn-lg" type="button">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3 nopadding">
+				<form>
+					<div class="form-group">
+						<label for="selectedSort">Sort by: </label>
+						<select ng-model='selectedSort' id="selectedSort" class="form-control bootstrap-select btn btn-navbar-color">
+							<option value='blogid'>Blog Id</option>
+							<option value='blogName'>Name</option>
+							<option value='userId'>User Id</option>
+							<option value='createDate'>Date</option>
+						</select>
+					</div>
+				</form>
+			</div>
+		</div>
+		<br> -->
+<div class="container">
+	<div class="">
+		<form name="myForm">
+			<div class="form-group">
+				<label> {{blogPost.blogtitle}}</label> <br> <b>PostedBy:</b>{{blogPost.createdBy.firstname}}
+				<span class="glyphicon glyphicon-time"></span><b>On</b>{{blogPost.postedOn
+				| date:'yyyy-MM-dd'}} <br>
+				<br> <b>About Blog :</b>{{blogPost.description}}<br>
+				<br> Leave a Comment:<br>
+				<textarea rows="1" cols="35" name="bComment"
+					ng-model="blogComment.commentText" ng-minlength="5"
+					ng-maxlength="255" required></textarea><br><br>
+				&nbsp;&nbsp;
+				<button type="submit" class="btn btn-lg" ng-click="savecomment()" ng-disabled="myForm.$invalid">Comment</button>&nbsp;&nbsp;&nbsp;&nbsp;
+				
+				<button type="submit" class="btn btn-lg"
+					ng-click="GetBlogComments(blogPost.blogid)">Show comments</button>
+				<br>
+				<br>
+				<ul>
+					<li ng-repeat="blogcomment in blogcomments"><label>{{blogcomment.commentText}}</label></li>
+				</ul>
+				<span ng-show="myForm.bComment.$error.minlength" style="color: red;">Minimum
+					5 characters</span> <span ng-show="myForm.bComment.$error.maxlength"
+					style="color: red;">Maximum 255 characters</span> <span
+					ng-show="myForm.bComment.$error.required && myForm.bComment.$dirty"
+					style="color: red;">Required Field</span>
+			</div>
 
-<div>
-<form>
-
-<label>
-{{blogPost.blogtitle}}</label>
-<br>
-<b>PostedBy:</b>{{blogPost.createdBy.firstname}} <br>
-<span class="glyphicon glyphicon-time"></span><b>On</b>{{blogPost.postedOn | date:'yyyy-MM-dd'}}
-<br><br>
-<label>{{blogPost.description}}</label><br><br>
-Leave a Comment:<br><textarea rows="3" cols="50" ng-model="blogComment.commentText"></textarea>
-&nbsp;&nbsp;
-<button type="submit" class="btn btn-lg" ng-click="savecomment()">Comment</button>
-<br><br>
-<button type="submit"  class="btn btn-lg" ng-click="GetBlogComments(blogPost.blogid)">Show comments</button><br><br>
-<ul><li ng-repeat="blogcomment in blogcomments">
-<label>{{blogcomment.commentText}}</label></li></ul>
-
-</form>
+		</form>
+	</div>
 </div>

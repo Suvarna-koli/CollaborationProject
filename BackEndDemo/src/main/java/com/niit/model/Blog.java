@@ -30,6 +30,7 @@ public class Blog {
 	@ManyToOne
 	@JoinColumn(name="username")
 	private User createdBy;
+	
 	public int getBlogid() {
 		return blogid;
 	}

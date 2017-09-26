@@ -6,6 +6,7 @@ F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\controller\UserController.j
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\dao\BlogPostDAOImpl.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\model\Person.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\configuration\WebConfig.java
+F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\model\ForumComment.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\model\Error.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\dao\BlogPostDAO.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\dao\ProfileImageDAO.java
@@ -14,7 +15,10 @@ F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\dao\UserDAOImpl.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\dao\PersonDAOImpl.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\model\Friend.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\dao\UserDAO.java
+F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\controller\ForumController.java
+F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\dao\ForumDAO.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\model\User.java
+F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\model\Forum.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\controller\ProfileImageController.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\configuration\DBConfig.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\controller\SocketController.java
@@ -30,3 +34,4 @@ F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\model\ProfileImage.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\dao\FriendDAO.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\model\Job.java
 F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\controller\FriendController.java
+F:\ShriniwasBatch\BackEndDemo\src\main\java\com\niit\dao\ForumDAOImpl.java

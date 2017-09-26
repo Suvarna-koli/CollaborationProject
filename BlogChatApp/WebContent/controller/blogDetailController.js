@@ -45,23 +45,7 @@ app.controller('BlogDetailController', function(BlogService,$scope,$location,$ro
 	
 	
 	
-	/*$scope.GetBlogComments=function(blogid){
-		
-		BlogPostService.GetBlogComments(blogid).then(function(response){
-			console.log(response.data)
-			console.log(response.status)
-			$scope.blogcomments=response.data
-			
-			
-		},function(response)
-		{
-			console.log(response.status)
-			if(response.status==401)
-			$location.path('/validateUser')
-			$scope.error=response.data
-			
-		})
-	}*/
+
 	function GetBlogComments(){
 		
 		BlogService.GetBlogComments(blogid).then(function(response){

@@ -5,15 +5,15 @@ var app=angular.module("app",['ngRoute','ngCookies']);
 app.config(function($routeProvider){
 	$routeProvider
 	.when('/Navbar1',{
-		//controller:'PersonController',
+		
 		templateUrl:'views/Navbar1.html'
 	})
 	.when('/Userhome',{
-		//controller:'PersonController',
+		
 		templateUrl:'views/UserHome.html'
 	})
 	.when('/contactus',{
-		//controller:'PersonController',
+	
 		templateUrl:'views/ContactUs.html'
 	})
 	.when('/registerUser',{

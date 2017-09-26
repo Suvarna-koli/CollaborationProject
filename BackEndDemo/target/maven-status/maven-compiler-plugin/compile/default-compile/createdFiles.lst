@@ -1,12 +1,16 @@
 com\niit\controller\JobController.class
 com\niit\dao\UserDAO.class
 com\niit\controller\FriendController.class
+com\niit\dao\ForumDAO.class
 com\niit\model\BlogComment.class
+com\niit\model\ForumComment.class
 com\niit\dao\UserDAOImpl.class
 com\niit\dao\FriendDAO.class
+com\niit\controller\ForumController.class
 com\niit\controller\UserController.class
 com\niit\dao\JobDAO.class
 com\niit\configuration\DBConfig.class
+com\niit\model\Forum.class
 com\niit\configuration\WebSocketConfiguration.class
 com\niit\model\Chat.class
 com\niit\model\User.class
@@ -30,3 +34,4 @@ com\niit\model\Friend.class
 com\niit\configuration\WebAppInitializer.class
 com\niit\configuration\WebConfig.class
 com\niit\dao\ProfileImageDAO.class
+com\niit\dao\ForumDAOImpl.class

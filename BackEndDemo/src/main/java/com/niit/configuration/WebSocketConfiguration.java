@@ -26,7 +26,7 @@ public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer
 		
 		System.out.println("configurer massage broker");
 		registry.enableSimpleBroker("/queue/","/topic/");//queue is client id and topic is subscriber
-		registry.setApplicationDestinationPrefixes("/app");
+		registry.setApplicationDestinationPrefixes("/app");//client to server
 	}
 
 	

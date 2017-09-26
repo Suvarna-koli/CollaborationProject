@@ -29,7 +29,7 @@
   position: relative;
   font-size: 16px;
   height: auto;
-  padding: 10px;
+  padding: 8px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -43,7 +43,7 @@
   border-bottom-right-radius: 0;
 }
 .form-signin input[type="password"] {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -56,15 +56,17 @@
         <div class="col-sm-6 col-md-4 col-md-offset-4">
            
             <div class="account-wall">
-              <form class="form-signin" name="loginForm" novalidate>       
+              <form class="form-signin" name="loginform" novalidate>       
       <h2 class="form-signin-heading"><center><font face="" size="5px">Please login</font></center>
       </h2>
-      <input type="text" class="form-control" ng-model="user.username" placeholder="User Name" required/><br>
-      <input type="password" class="form-control" ng-model="user.password" placeholder="Password" required/>      
+      <input type="text" name="userName" class="form-control" ng-model="user.username" placeholder="User Name" required/><br>
+      <p ng-show="!loginform.userName.$invalid" style="color:red">User name should not be blank</p>
+      <input type="password" class="form-control"  name="Password"  ng-model="user.password" placeholder="Password" required/>      
+            <p ng-show="!loginform.Password.$invalid" style="color:red">Not blank</p>
       <label class="checkbox">
         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
       </label>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="validateUser()">Login</button>  
+      <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="validateUser()" ng-disabled="loginform.$invalid">Login</button>  
       <br>
       New to the Blog..
       <a href="#/registerUser" class="text-center new-account">Create an account</a>

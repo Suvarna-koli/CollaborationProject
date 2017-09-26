@@ -28,7 +28,8 @@ public class DBConfig {
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
 		//Class classes[]=new Class[]{Person.class};
-		Class classes[]=new Class[]{User.class,Blog.class,BlogComment.class,Job.class,ProfileImage.class,Friend.class,Error.class};
+		Class classes[]=new Class[]{User.class,Forum.class,ForumComment.class,
+				Blog.class,BlogComment.class,Job.class,ProfileImage.class,Friend.class,Error.class};
 	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 	}
 	@Bean

@@ -7,69 +7,99 @@
  <style>
 
 .wrapper {
-  margin-top: 80px;
-  margin-bottom: 80px;
+ 
+   
+  	width:600px;
+  
+   margin-top: 0px;
+  margin-bottom: 80px; 
+ 
 }
 
-.form-signin {
-  max-width: 380px;
+.form-signup {
+  max-width: 500px;
   padding: 15px 35px 45px;
   margin: 0 auto;
   background-image:img/bgg6.jpg;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
-  margin-bottom: 30px;
+.form-signup .form-signup-heading,
+.form-signup .checkbox {
+  margin-bottom: 32px;
 }
-.form-signin .checkbox {
+.form-signup .checkbox {
   font-weight: normal;
 }
-.form-signin .form-control {
+.form-signup .form-control {
   position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
+   font-size: 13px; 
+  height: 35px;
+  padding: 8px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.form-signin .form-control:focus {
+.form-signup .form-control:focus {
   z-index: 2;
 }
-.form-signin input[type="text"] {
+ .form-signup input[type="text"] {
   margin-bottom: -1px;
+ 
+
+ 
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.form-signin input[type="password"] {
+.form-signup input[type="password"] {
   margin-bottom: 20px;
+
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
+ 
 </style>
+<script type="text/javascript">
+function checkPass() 
+{
+   if (document.getElementById("password").value !=
+           document.getElementById("confirm_password").value) {
+   
+	   alert("Password should be same...");
+	   
+   }
+
+</script>
   
 <div class="container">
 
 <div class="row">
-<div class="col-sm-6 col-md-4 col-md-offset-4">
+<div class="col-sm-10 col-md-4 col-md-offset-4">
      <div class="wrapper"> 
-    <form class="form-signin">       
-      <h2 class="form-signin-heading"><center><font face="Monotype Corsiva" size="6px">Create a new account</font></center></h2>
-      <h4>User Name:</h4> <input type="text" class="form-control" ng-model="user.username" placeholder="" required/>
-     <h4>Password:</h4><input type="password" class="form-control"  ng-model="user.password" placeholder="" required/>      
-     
-    <h4>First Name:</h4><input type="text" class="form-control" ng-model="user.firstname" placeholder="" required/>
-      <h4>Last Name:</h4><input type="text" class="form-control" ng-model="user.lastname" placeholder="" required/>
+    <form class="form-signup" name="myForm">       
+      <h2 class="form-signup-heading"><center><font face="Monotype Corsiva" size="6px">Create a new account</font></center></h2>
+      <h4>User Name:</h4> <input type="text" name="UserName" size="50"  class="form-control" ng-model="user.username" placeholder="" required ng-minlength="3" ng-maxlength="255" />
       
-      <h4>E-mail:</h4><input type="text" class="form-control" ng-model="user.email" placeholder="" required/>
-      <h4>Phone Number:</h4><input type="text" class="form-control" ng-model="user.mobile" placeholder="" required/>
-      Select Role<h4><input type="radio" value="Student" ng-model="user.role">Student</h4>
-      <h4><input type="radio" value="Alumini" ng-model="user.role">Alumini</h4>
-      <h4><input type="radio" value="Employee" ng-model="user.role">Employee</h4>
+      <p ng-show="myForm.UserName.$error.minlength || myForm.UserName.$error.maxlength" style="color:red">User name should be in Range 
+     <h4>Password:</h4><input type="password" class="form-control" name="password" id="password" size="50" ng-model="user.password" placeholder="" ng-minlength="5" ng-maxlength="10"  required/>      
+     		<span ng-show="myForm.password.$error.required && myForm.password.$dirty" style="color: red;">Enter Password</span> 
+						<span ng-show="myForm.password.$error.maxlength" style="color: red;">Maximum 10 characters</span> 
+						<span ng-show="myForm.password.$error.minlength" style="color: red;">Minimum 5 characters</span>
+				
+     <h4>Confirm Password:</h4> <input type="password" id="confirm_password" size="50" class="form-control" onkeyup='checkPass()' required>
+    <h4>First Name:</h4><input type="text" name="FirstName" class="form-control" size="50" ng-model="user.firstname" placeholder="" required/>
+     <p ng-show="!myForm.FirstName.$invalid" style="color:red">User first name should not be blank</p>
+      <h4>Last Name:</h4><input type="text" class="form-control" size="50" ng-model="user.lastname" placeholder="" required/>
+      
+      <h4>E-mail:</h4><input type="text" class="form-control" name="email" ng-model="user.email" placeholder="" required/>
+      <span ng-show="myForm.email.$error.required && myForm.email.$dirty" style="color: red;">Enter Email</span> 
+						<span ng-show="myForm.email.$error.email && myForm.email.$dirty" style="color: red;">Enter Valid Email</span> 
+      <h4>Phone Number:</h4><input type="text" class="form-control" ng-model="user.mobile" placeholder="" required ng-minlength="10" ng-maxlength="10"/>
+      <p ng-show="signupform.Phone.$error.minlength || signupform.Phone.$error.maxlength " style="color:red">Phone number should be in 10 digit
+      Select Role<h4><input type="radio" value="Student" ng-model="user.role">Student
+      <input type="radio" value="Alumini" ng-model="user.role">Alumini
+      <input type="radio" value="Employee" ng-model="user.role">Employee</h4>
       <input type="hidden" value="0" ng-model="user.online">
-     <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="registerUser()">Sign Up</button>   
+     <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="registerUser()" ng-disabled="myForm.$invalid">Sign Up</button>   
     </form>
    </div>
    </div>
