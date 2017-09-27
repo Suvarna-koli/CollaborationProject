@@ -3,7 +3,7 @@
  */
 app.controller('FriendDetailController',function($scope,$location,$FriendService,$routeParams){
 var fromId=$routeParams.fromId;
-	function getUserDetails(){
+	alert("in controller")
 		FriendService.getUserDetails(fromId).then(function(response){
 			$scope.user=response.data
 		},function(response){
@@ -11,6 +11,7 @@ var fromId=$routeParams.fromId;
 		$location.path('/validateUser')
 		console.log(response.status)
 		})
-		}
+		
+	
 	
 })

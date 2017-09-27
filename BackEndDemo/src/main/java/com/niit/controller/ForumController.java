@@ -30,7 +30,7 @@ public class ForumController {
 	
 	
 	
-	@RequestMapping(value="/saveForum",method=RequestMethod.POST)
+	@RequestMapping(value="/saveForum",method=RequestMethod.POST)//To save the forum
 	public ResponseEntity<?> saveForum(@RequestBody Forum forumPost,HttpSession session){
 		if (session.getAttribute("username") == null) {
             Error error = new Error(3, "Unauthorized user");
@@ -56,7 +56,7 @@ public class ForumController {
 	
 				
 	}
-	@RequestMapping(value="/getforum/{fapproved}",method=RequestMethod.GET)
+	@RequestMapping(value="/getforum/{fapproved}",method=RequestMethod.GET)//to show the forums
 	public ResponseEntity<?> getForums(@PathVariable("fapproved") int approved,HttpSession session){
 		if(session.getAttribute("username")==null){
 			Error error=new Error(5,"UnAuthorized User");
@@ -66,7 +66,7 @@ public class ForumController {
 		
 		return new ResponseEntity<List<Forum>>(bloglist,HttpStatus.OK);
 	}
-	@RequestMapping(value="/getforumtbyid/{fid}",method=RequestMethod.GET)
+	@RequestMapping(value="/getforumtbyid/{fid}",method=RequestMethod.GET)//to show the forums by id
 	public ResponseEntity<?> getForumById(@PathVariable("fid") int blogid,HttpSession session){
 		if(session.getAttribute("username")==null){
 			Error error=new Error(5,"UnAuthorized User");
@@ -77,7 +77,7 @@ public class ForumController {
 		return new ResponseEntity<Forum>(blogPost,HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/updateforumpost",method=RequestMethod.PUT)
+	@RequestMapping(value="/updateforumpost",method=RequestMethod.PUT)//to update the forums when approved
 	public ResponseEntity<?> updateForumPost(@RequestBody Forum forumPost,HttpSession session){
 		if (session.getAttribute("username") == null) {
             Error error = new Error(5, "Unauthorize'd user");
@@ -93,7 +93,7 @@ public class ForumController {
 		}
 
 	}
-	@RequestMapping(value="/commentOnforum",method=RequestMethod.POST)
+	@RequestMapping(value="/commentOnforum",method=RequestMethod.POST)//to comment on forum
 	public ResponseEntity<?> saveforumComment(@RequestBody ForumComment forumComment,HttpSession session)
 	{
 		if(session.getAttribute("username")==null){
@@ -113,7 +113,7 @@ public class ForumController {
 		}
 		
 	}
-	@RequestMapping(value="/getcomments/{fid}", method=RequestMethod.GET)
+	@RequestMapping(value="/getforumcomments/{fid}", method=RequestMethod.GET)//to show the comments of forum
 	public ResponseEntity<?> getforumcomments(@PathVariable("fid") int fid,HttpSession session)
 	{
 		

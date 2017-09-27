@@ -59,15 +59,15 @@
  
 </style>
 <script type="text/javascript">
-function checkPass() 
-{
-   if (document.getElementById("password").value !=
-           document.getElementById("confirm_password").value) {
-   
-	   alert("Password should be same...");
-	   
-   }
-
+    function Validate() {
+        var password = document.getElementById("txtPassword").value;
+        var confirmPassword = document.getElementById("txtConfirmPassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
 </script>
   
 <div class="container">
@@ -80,26 +80,26 @@ function checkPass()
       <h4>User Name:</h4> <input type="text" name="UserName" size="50"  class="form-control" ng-model="user.username" placeholder="" required ng-minlength="3" ng-maxlength="255" />
       
       <p ng-show="myForm.UserName.$error.minlength || myForm.UserName.$error.maxlength" style="color:red">User name should be in Range 
-     <h4>Password:</h4><input type="password" class="form-control" name="password" id="password" size="50" ng-model="user.password" placeholder="" ng-minlength="5" ng-maxlength="10"  required/>      
+     <h4>Password:</h4><input type="password" class="form-control" name="password" id="txtPassword" size="50" ng-model="user.password" placeholder="" ng-minlength="5" ng-maxlength="10"  required/>      
      		<span ng-show="myForm.password.$error.required && myForm.password.$dirty" style="color: red;">Enter Password</span> 
 						<span ng-show="myForm.password.$error.maxlength" style="color: red;">Maximum 10 characters</span> 
 						<span ng-show="myForm.password.$error.minlength" style="color: red;">Minimum 5 characters</span>
 				
-     <h4>Confirm Password:</h4> <input type="password" id="confirm_password" size="50" class="form-control" onkeyup='checkPass()' required>
+     <h4>Confirm Password:</h4> <input type="password" id="txtConfirmPassword" size="50" class="form-control" required>
     <h4>First Name:</h4><input type="text" name="FirstName" class="form-control" size="50" ng-model="user.firstname" placeholder="" required/>
      <p ng-show="!myForm.FirstName.$invalid" style="color:red">User first name should not be blank</p>
       <h4>Last Name:</h4><input type="text" class="form-control" size="50" ng-model="user.lastname" placeholder="" required/>
       
-      <h4>E-mail:</h4><input type="text" class="form-control" name="email" ng-model="user.email" placeholder="" required/>
+      <h4>E-mail:</h4><input type="email" class="form-control" name="email" ng-model="user.email" placeholder="" required/>
       <span ng-show="myForm.email.$error.required && myForm.email.$dirty" style="color: red;">Enter Email</span> 
 						<span ng-show="myForm.email.$error.email && myForm.email.$dirty" style="color: red;">Enter Valid Email</span> 
-      <h4>Phone Number:</h4><input type="text" class="form-control" ng-model="user.mobile" placeholder="" required ng-minlength="10" ng-maxlength="10"/>
-      <p ng-show="signupform.Phone.$error.minlength || signupform.Phone.$error.maxlength " style="color:red">Phone number should be in 10 digit
+      <h4>Phone Number:</h4><input type="text" name="Phone" class="form-control" ng-model="user.mobile" placeholder="" required ng-minlength="10" ng-maxlength="10"/>
+      <p ng-show="myForm.Phone.$error.minlength || myForm.Phone.$error.maxlength " style="color:red">Phone number should be in 10 digit
       Select Role<h4><input type="radio" value="Student" ng-model="user.role">Student
       <input type="radio" value="Alumini" ng-model="user.role">Alumini
       <input type="radio" value="Employee" ng-model="user.role">Employee</h4>
       <input type="hidden" value="0" ng-model="user.online">
-     <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="registerUser()" ng-disabled="myForm.$invalid">Sign Up</button>   
+     <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="registerUser()" onclick="return Validate()" ng-disabled="myForm.$invalid">Sign Up</button>   
     </form>
    </div>
    </div>

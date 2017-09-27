@@ -1,41 +1,13 @@
-<!-- <div class="container">
-		<div class="h2">Blogs</div>
-		<br /><br />
-		<div class="row">
-			<div class="col-sm-9">
-				<div id="custom-search-input">
-					<div class="input-group col-md-12">
-						<input type="text" class="form-control input-lg" placeholder="Search Blogs" ng-model="filterText" /> <span class="input-group-btn">
-							<button class="btn btn-info btn-lg" type="button">
-								<i class="glyphicon glyphicon-search"></i>
-							</button>
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3 nopadding">
-				<form>
-					<div class="form-group">
-						<label for="selectedSort">Sort by: </label>
-						<select ng-model='selectedSort' id="selectedSort" class="form-control bootstrap-select btn btn-navbar-color">
-							<option value='blogid'>Blog Id</option>
-							<option value='blogName'>Name</option>
-							<option value='userId'>User Id</option>
-							<option value='createDate'>Date</option>
-						</select>
-					</div>
-				</form>
-			</div>
-		</div>
-		<br> -->
+
 <div class="container">
 	<div class="">
 		<form name="myForm">
 			<div class="form-group">
-				<label> {{blogPost.blogtitle}}</label> <br> <b>PostedBy:</b>{{blogPost.createdBy.firstname}}
+				<label><center> {{blogPost.blogtitle}}</label></center> <br> 
+				PostedBy:{{blogPost.createdBy.firstname}}&nbsp;&nbsp;
 				<span class="glyphicon glyphicon-time"></span><b>On</b>{{blogPost.postedOn
 				| date:'yyyy-MM-dd'}} <br>
-				<br> <b>About Blog :</b>{{blogPost.description}}<br>
+				<br> <b>About Blog :</b> {{blogPost.description}}<br>
 				<br> Leave a Comment:<br>
 				<textarea rows="1" cols="35" name="bComment"
 					ng-model="blogComment.commentText" ng-minlength="5"

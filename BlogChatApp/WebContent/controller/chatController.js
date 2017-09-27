@@ -2,11 +2,11 @@
  * 
  */
 app.controller('ChatCtrl', ['$rootScope' ,'$scope', 'socket', function($rootScope ,$scope, socket) {
-    alert('entering chat controller')
+    /*alert('entering chat controller')*/
     $scope.chats = [];
     $scope.stompClient = socket.stompClient;
     $scope.users=[]
-    $scope.$on('sockConnected', function(event, frame) {
+    $scope.$on('sockConnected', function(event, frame) {//to connect with socket
     	alert('sockconnected')
         $scope.userName=$rootScope.currentUser.username;
         $scope.stompClient.subscribe("/topic/join", function(message) {
@@ -42,7 +42,7 @@ app.controller('ChatCtrl', ['$rootScope' ,'$scope', 'socket', function($rootScop
 
     };
 
-    $scope.capitalize = function(str) {
+    $scope.capitalize = function(str) {//to capitalize the users name
         return str.charAt(0).toUpperCase() + str.slice(1);
     };
  
@@ -57,7 +57,7 @@ app.controller('ChatCtrl', ['$rootScope' ,'$scope', 'socket', function($rootScop
     
     
     
-    $scope.$on('sockConnected', function(event, frame) {
+    $scope.$on('sockConnected', function(event, frame) {//to subscribe to all as well as 
         $scope.userName=$rootScope.currentUser.username;
   
         $scope.user=$rootScope.currentUser.username;

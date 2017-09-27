@@ -29,7 +29,7 @@ public class ProfileImageController {
 		@Autowired
 		private UserDAO userDAO;
 		
-		@RequestMapping(value="/uploadprofile",method=RequestMethod.POST)
+		@RequestMapping(value="/uploadprofile",method=RequestMethod.POST)//to upload the img
 		public ResponseEntity<?> uploadProfilePic(@RequestParam CommonsMultipartFile pimage,HttpSession session)
 		{
 			//User user=(User)session.getAttribute("username");
@@ -47,7 +47,7 @@ public class ProfileImageController {
 			return new ResponseEntity<User>(user,HttpStatus.OK);
 			
 		}
-		@RequestMapping(value="/getprofilepic/{username}", method=RequestMethod.GET)
+		@RequestMapping(value="/getprofilepic/{username}", method=RequestMethod.GET)//to get the progile pic
 		public @ResponseBody byte[] getProfilePic(@PathVariable String username,HttpSession session){
 			String usernm=(String) session.getAttribute("username");
 			User user=userDAO.validateUsername(usernm);

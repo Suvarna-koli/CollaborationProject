@@ -58,6 +58,24 @@ app.config(function($routeProvider){
 	templateUrl:'views/BlogPostApprovalComment.html'	
 	})
 	
+	.when('/saveforums',{
+		controller:'ForumController',
+	templateUrl:'views/ForumPost.html'	
+	})
+	.when('/getallforums',{
+		controller:'BlogController',
+	templateUrl:'views/ListOfForum.html'	
+	})
+	.when('/getforumbyid/:fid',{
+		controller:'ForumDetailController',
+	templateUrl:'views/ForumPostDetail.html'	
+	})
+	
+	.when('/approveforumpost/:fid',{
+		controller:'ForumDetailController',
+	templateUrl:'views/ForumPostApprovalComment.html'	
+	})
+	
 	.when('/profilepic',{
 		templateUrl:'views/ProfileImage.html'
 	})
@@ -71,7 +89,7 @@ app.config(function($routeProvider){
 	templateUrl:'views/PendingRequest.html'	
 	})
 	
-	.when('/getUserDetails/fromId',{
+	.when('/getUserDetails/:fromId',{
 		controller:'FriendDetailController',
 	templateUrl:'views/FrUserDetails.html'	
 	})
@@ -96,20 +114,20 @@ app.run(function($rootScope,$cookieStore,UserService,JobService,$location){
 	if($rootScope.currentUser==undefined)
 		$rootScope.currentUser=$cookieStore.get("currentUser")
 		
-		/*$rootScope.logout = function() {
+	
 		
-		UserService.logout().then(function(response) {
-			$rootScope.message = "logged out successfully.."
-			delete $rootScope.currentUser;
-			$cookieStore.remove("currentUser")
-			$location.path('/validateUser')
-
-		}, function(response) {
-			console.log(response.status)
-			$rootScope.message=response.data.message
+		$rootScope.logout=function(){
+		UserService.logout().then(function(response){
+			$scope.logoutSuccess="logout ..Sccuessfully"
+	delete $rootScope.currentUser
+$cookieStore.remove("currentUser")
+$location.path('/validateUser');
+		},function(response){
+			$scope.error=response.data
 			$location.path('/validateUser')
 		})
-*/
-	
+	}
+
+
 
 })

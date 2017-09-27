@@ -29,7 +29,7 @@ public class JobController {
 	@Autowired
 	private UserDAO userDAO;
 
-	@RequestMapping(value = "/saveJob", method = RequestMethod.POST)
+	@RequestMapping(value = "/saveJob", method = RequestMethod.POST)//to save job
 	public ResponseEntity<?> saveJob(@RequestBody Job job, HttpSession session){
 		System.out.println("in job controller");
 		if (session.getAttribute("username") == null) {
@@ -60,7 +60,7 @@ public class JobController {
 	}
 
 
-	@RequestMapping(value = "/showjob", method = RequestMethod.GET)
+	@RequestMapping(value = "/showjob", method = RequestMethod.GET)//to all show jobs
 	public ResponseEntity<?> getAllJobs(HttpSession session) {
 
 		if (session.getAttribute("username") == null) {
@@ -73,7 +73,7 @@ public class JobController {
 		return new ResponseEntity<List<Job>>(jobs, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/getJobById/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/getJobById/{id}", method = RequestMethod.GET)//to show job by id
 	public ResponseEntity<?> getJobById(@PathVariable("id") int id, HttpSession session) {
 
 		if (session.getAttribute("username") == null) {

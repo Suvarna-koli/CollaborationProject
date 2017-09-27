@@ -2,7 +2,7 @@
  * 
  */
 app.controller('BlogDetailController', function(BlogService,$scope,$location,$routeParams,$rootScope) {
-	alert("in blog by id controller")
+	
 	var blogid=$routeParams.blogid
 	
 	$scope.blogPost= BlogService.getBlogPostById(blogid).then(function(response) {
@@ -16,7 +16,7 @@ app.controller('BlogDetailController', function(BlogService,$scope,$location,$ro
 	})
 
 	$scope.UpdateBlogPost = function(blogPost) {
-		alert("Update func")
+		
 		BlogService.UpdateBlogPost($scope.blogPost).then(function(response) {
 			console.log(response.status)
 			alert("Updated Successsfully")
@@ -46,8 +46,8 @@ app.controller('BlogDetailController', function(BlogService,$scope,$location,$ro
 	
 	
 
-	function GetBlogComments(){
-		
+	$scope.GetBlogComments=function(blogid){
+
 		BlogService.GetBlogComments(blogid).then(function(response){
 			console.log(response.data)
 			console.log(response.status)
@@ -63,5 +63,5 @@ app.controller('BlogDetailController', function(BlogService,$scope,$location,$ro
 			
 		})
 	}
-	GetBlogComments();
+
 })

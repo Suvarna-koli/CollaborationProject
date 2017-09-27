@@ -6,9 +6,7 @@ app.controller('JobController',function(JobService,$scope,$location,$rootScope){
 	
 	function getAllJobs(){
 		JobService.getAllJobs().then(function(response){
-			alert("get job all show")
-			
-			//alert(jobs.jobTitle)
+		
 			
 			$scope.jobs=response.data;
 		
@@ -20,7 +18,7 @@ app.controller('JobController',function(JobService,$scope,$location,$rootScope){
 	}
 	
 	$scope.saveJob=function(){
-		alert("controller save")
+	
 		JobService.saveJob($scope.job).then(function(response){
 			console.log(response.status)
 			//$location.path('/getAllJobs')//mapping url same as backend controller
@@ -30,13 +28,13 @@ app.controller('JobController',function(JobService,$scope,$location,$rootScope){
 	{
 		console.log(response.status)
 		console.log(response.data)
-	
+	alert("UnSuccessfully to add")
 		error=response.data
 		$location.path('/validateUser')
 		})
 	}
 	$scope.getJobById=function(id){
-		alert("get job id controller")
+		
 		$scope.showjob=true
 		JobService.getJobById(id).then(function(response){
 			console.log(response.data)

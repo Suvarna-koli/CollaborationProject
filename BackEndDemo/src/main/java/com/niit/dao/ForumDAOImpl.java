@@ -23,7 +23,7 @@ public class ForumDAOImpl implements ForumDAO{
 
 	
 	public void saveForum(Forum forumPost) {
-		System.out.println("saving forum from dao impll");
+		
 		Session session=sessionFactory.getCurrentSession();
 		
 		session.save(forumPost);

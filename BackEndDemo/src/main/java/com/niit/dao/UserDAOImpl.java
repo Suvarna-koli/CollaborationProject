@@ -17,7 +17,7 @@ public class UserDAOImpl implements UserDAO {
 	private SessionFactory sessionFactory;
 
 	public void registerUser(User user) {
-		System.out.println("in daoimpl");
+		
 		Session session=sessionFactory.getCurrentSession();
 		System.out.println(user.getFirstname());
 		session.save(user);
@@ -57,9 +57,9 @@ return user;
 
 	public User getUserByUsername(String username){
 		Session session=sessionFactory.getCurrentSession();
-		System.out.println("entered in daoimpl");
+		
 		User user=(User)session.get(User.class,username);
-		System.out.println(user.getFirstname());
+		
 		return user;
 	}
 }

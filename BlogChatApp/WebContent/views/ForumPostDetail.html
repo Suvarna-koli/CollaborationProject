@@ -1,0 +1,32 @@
+
+<div class="container">
+
+<div class="row">
+ <div class="col-sm-6 col-md-4 col-md-offset-4">
+<div class="account-wall">
+<div>
+<form>
+
+<label>{{forumPost.ftitle}}</label>
+<span><strong>Posted By:</strong>{{forumPost.fcreatedBy.firstname}}</span>
+<span><strong>On:</strong>{{forumPost.postedOn | date:'medium'}}</span>
+
+
+<label>{{forumPost.description}}
+</label>
+
+
+
+
+
+<input type="radio" ng-model="forumPost.fapproved" value="True"><label>Approve</label>&nbsp;&nbsp;	
+<input type="radio" ng-model="forumPost.fapproved" value="False"><label>Reject</label>
+<input type="submit" ng-click="UpdateForumPost()">
+</form>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>

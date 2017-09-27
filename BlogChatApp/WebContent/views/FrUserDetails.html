@@ -2,14 +2,25 @@
 <div class="row">
   <div class="col-sm-6 col-md-4 col-md-4">
 <table>
-
-<tr><td><img src="http://localhost:8087/BackEndDemo/getprofilepic/{{user.username}}" width="200px" height="200px" class="img-rounded"></td></tr>
-<br><br><tr><td>Name</td><td>{{user.firstname}} {{user.lastname}}</td>
+<thead>
+<tr>
+<td>Name</td><br>
+<td>Profile</td><br>
+<td>Email<td><br>
+<td>Role</td><br><td>UserName</td>
 </tr>
-<tr><td>Email<td> {{user.email}}</td></tr>
-<tr><td>Role</td><td>{{user.role}}</td></tr>
-<tr><td>UserName</td><td>{{user.username}}</td></tr>
 
+</thead>
+<tbody>
+<tr>
+<td><img src="http://localhost:8087/BackEndDemo/getprofilepic/{{user.fromId}}" width="200px" height="200px" class="img-rounded"></td>
+<br><br><td>{{user.firstname}} {{user.lastname}}</td>
+
+ <td>{{user.email}}</td>
+<td>{{user.role}}</td>
+<td>{{user.username}}</td>
+</tr>
+</tbody>
 </table><br><br>
-<a href="#/pendingrequests"><button type="submit" class="btn btn-lg">Pending req</button></a>
+<a href="#/listOfPendingReq"><button type="submit" class="btn btn-lg">Pending req</button></a>
 </div></div></div>

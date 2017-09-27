@@ -16,9 +16,7 @@ public interface BlogPostDAO {
 	public void updateBlogPost(Blog blogPost);
 
 	void addComment(BlogComment blogComment);
-	/*
 
-	List<BlogComment> getBlogComments(int blogId);*/
 	
 	public List getBlogComments(int blogid);
 }

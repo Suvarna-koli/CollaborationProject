@@ -23,7 +23,7 @@ public class User {
 	private String password;
 	private String mobile;
 	private String role;
-	@Column(unique=true,nullable=false)
+	@Column(nullable=false,unique=true)
 	private String email;
 	@Column(name="onlne_status")
 	private boolean online;

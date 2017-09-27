@@ -3,7 +3,7 @@
  */
 app.controller('FriendController',function($scope,$location,FriendService){
 	function listOfSuggestedUser(){
-		alert("Frnd controller")
+		/*alert("Frnd controller")*/
 		FriendService.listOfSuggestedUser().then(function(response){
 			$scope.suggestedUsers=response.data
 			//$location.path('/listOfSuggestedUser')
@@ -32,7 +32,7 @@ app.controller('FriendController',function($scope,$location,FriendService){
 		})
 		}
 	$scope.addFriendRequest=function(toId){
-		alert(toId)
+		/*alert(toId)*/
 		FriendService.addFriendRequest(toId).then(function(response){
 			listOfSuggestedUser()
 			$location.path('/listOfSuggestedUser')

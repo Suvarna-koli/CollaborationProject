@@ -31,7 +31,7 @@ public class BlogPostController {
 	
 	
 	@RequestMapping(value="/saveBlog",method=RequestMethod.POST)
-	public ResponseEntity<?> saveBlog(@RequestBody Blog blogPost,HttpSession session){
+	public ResponseEntity<?> saveBlog(@RequestBody Blog blogPost,HttpSession session){//to save blog
 		if (session.getAttribute("username") == null) {
             Error error = new Error(3, "Unauthorized user");
 			return new ResponseEntity<Error>(error, HttpStatus.UNAUTHORIZED);
@@ -55,7 +55,7 @@ public class BlogPostController {
 	
 				
 	}
-	@RequestMapping(value="/getblogposts/{approved}",method=RequestMethod.GET)
+	@RequestMapping(value="/getblogposts/{approved}",method=RequestMethod.GET)//to get blog
 	public ResponseEntity<?> getBlogs(@PathVariable("approved") int approved,HttpSession session){
 		if(session.getAttribute("username")==null){
 			Error error=new Error(5,"UnAuthorized User");
@@ -65,7 +65,7 @@ public class BlogPostController {
 		
 		return new ResponseEntity<List<Blog>>(bloglist,HttpStatus.OK);
 	}
-	@RequestMapping(value="/getblogpostbyid/{blogid}",method=RequestMethod.GET)
+	@RequestMapping(value="/getblogpostbyid/{blogid}",method=RequestMethod.GET)//to get blog By id
 	public ResponseEntity<?> getBlogById(@PathVariable("blogid") int blogid,HttpSession session){
 		if(session.getAttribute("username")==null){
 			Error error=new Error(5,"UnAuthorized User");
@@ -76,7 +76,7 @@ public class BlogPostController {
 		return new ResponseEntity<Blog>(blogPost,HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/updateblogpost",method=RequestMethod.PUT)
+	@RequestMapping(value="/updateblogpost",method=RequestMethod.PUT)//to update the blog when  it approved
 	public ResponseEntity<?> updateBlogPost(@RequestBody Blog blogPost,HttpSession session){
 		if (session.getAttribute("username") == null) {
             Error error = new Error(5, "Unauthorized user");
@@ -92,7 +92,7 @@ public class BlogPostController {
 		}
 
 	}
-	@RequestMapping(value="/commentblog",method=RequestMethod.POST)
+	@RequestMapping(value="/commentblog",method=RequestMethod.POST)//to save the comment
 	public ResponseEntity<?> saveblogComment(@RequestBody BlogComment blogComment,HttpSession session)
 	{
 		if(session.getAttribute("username")==null){
@@ -112,16 +112,21 @@ public class BlogPostController {
 		}
 		
 	}
-	@RequestMapping(value="/getcomments/{blogid}", method=RequestMethod.GET)
+	@RequestMapping(value="/getcomments/{blogid}", method=RequestMethod.GET)//to show the comments
 	public ResponseEntity<?> getblogcomments(@PathVariable("blogid") int blogid,HttpSession session)
 	{
+		
 		
 		if(session.getAttribute("username")==null){
 			Error error=new Error(5,"Unauhorized");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
 		}
+		
 		List<BlogComment> commentlist=blogPostDAO.getBlogComments(blogid);
-
+for(BlogComment b:commentlist)
+{
+	b.getCommentText();
+}
 		return new ResponseEntity<List<BlogComment>>(commentlist,HttpStatus.OK);
 		
 	}

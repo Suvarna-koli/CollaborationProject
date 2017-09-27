@@ -20,7 +20,7 @@ public class BlogPostDAOImpl implements BlogPostDAO {
 	private SessionFactory sessionFactory;
 
 	public void saveBlog(Blog blogPost) {
-		System.out.println("saving blog from dao impll");
+		
 	Session session=sessionFactory.getCurrentSession();
 	System.out.println(blogPost.getBlogtitle());
 	session.save(blogPost);

@@ -16,7 +16,7 @@ app.filter('reverse', function() {
 	});
 
 	app.factory('socket', function($rootScope) {
-	  alert('app factory')
+	 alert('app factory')
 	    var socket = new SockJS('/BackEndDemo/portfolio');
 	    var stompClient = Stomp.over(socket);
 	    stompClient.connect('', '', function(frame) {

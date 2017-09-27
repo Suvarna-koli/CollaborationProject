@@ -8,10 +8,10 @@
 </thead>
 <tbody>
 <tr ng-repeat="request in pendingRequest">
-<td><td><a href="#/getUserDetails/{{request.fromId}}">{{request.fromId}}</a></td>
+<td>{{request.fromId}}</td>
 
 
-<td><img src="http://localhost:8087/BackEndDemo/getprofilepic/{{request.fromId}}" width="35px" height="30px"  class="btn btn-default" ></a></td>
+<td><img src="http://localhost:8087/BackEndDemo/getprofilepic/{{request.fromId}}" width="35px" height="30px"  class="btn btn-default" /></td>
 
 <td><a href="" class="btn btn-default" ng-click="updateRequest(request,'A')">Accept</a></td>
 <td><a href="" class="btn btn-default" ng-click="updateRequest(request,'D')">Reject</a></td>

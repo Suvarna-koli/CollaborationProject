@@ -5,7 +5,7 @@ app.factory('FriendService',function($http){
 	var friendService={};
 	
 	friendService.listOfSuggestedUser=function(){
-		alert("in service")
+		
 		return $http.get("http://localhost:8087/BackEndDemo/getSuggestedUser")
 	}
 	friendService.addFriendRequest=function(toId){
@@ -15,6 +15,7 @@ app.factory('FriendService',function($http){
 		return $http.get("http://localhost:8087/BackEndDemo/getpendingrequest")
 	}
 	friendService.getUserDetails=function(fromId){
+		alert(" in service")
 		return $http.get("http://localhost:8087/BackEndDemo/getuserdetails/"+fromId)
 	}
 	friendService.updateRequest=function(pendingRequest){

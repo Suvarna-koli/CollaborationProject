@@ -24,7 +24,7 @@ public class SocketController {
 		this.messagingTemplate=messagingTemplate;
 	}
 	
-	@SubscribeMapping("/join/{username}")
+	@SubscribeMapping("/join/{username}")//to subscribe the server
 	public List<String> join(@DestinationVariable("username") String username){
 		if(!users.contains(username))
 			users.add(username);
@@ -32,7 +32,7 @@ public class SocketController {
 		return users;
 	}
 	
-	@MessageMapping("/chat")
+	@MessageMapping("/chat")//to receive the chat
 	public void chatReceived(Chat chat){
 		if("all".equals(chat.getTo())){
 			messagingTemplate.convertAndSend("/queue/chats", chat);

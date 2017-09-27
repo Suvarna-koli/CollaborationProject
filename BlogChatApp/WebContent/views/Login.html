@@ -57,19 +57,19 @@
            
             <div class="account-wall">
               <form class="form-signin" name="loginform" novalidate>       
-      <h2 class="form-signin-heading"><center><font face="" size="5px">Please login</font></center>
+      <h2 class="form-signin-heading"><center><font face="" color="black" size="5px">Please login</font></center>
       </h2>
       <input type="text" name="userName" class="form-control" ng-model="user.username" placeholder="User Name" required/><br>
       <p ng-show="!loginform.userName.$invalid" style="color:red">User name should not be blank</p>
       <input type="password" class="form-control"  name="Password"  ng-model="user.password" placeholder="Password" required/>      
             <p ng-show="!loginform.Password.$invalid" style="color:red">Not blank</p>
       <label class="checkbox">
-        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"><font face="" color="black" size=""> Remember me</font>
       </label>
       <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="validateUser()" ng-disabled="loginform.$invalid">Login</button>  
       <br>
       New to the Blog..
-      <a href="#/registerUser" class="text-center new-account">Create an account</a>
+      <a href="#/registerUser" class="text-center new-account"><font face="" color="black" size=""><b>Create an account</b></font></a>
                 
     </form>
   </div>
